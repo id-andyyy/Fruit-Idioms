@@ -32,7 +32,7 @@
                <div class="theory-content col-lg-4" id="theoryContent">
                   <div class="theory-content-header" id="theoryContentHeader">
                      <h5 class="theory-content-header__title" id="offcanvasExampleLabel">Choose one of the idioms</h5>
-                     <button class="theory-content-header__btn btn-close invisible" type="button" class="btn-close"
+                     <button class="theory-content-header__btn btn-close invisible" type="button"
                         data-bs-dismiss="offcanvas" aria-label="Close" id="theoryContentHeaderBtn"></button>
                   </div>
                   <div class="theory-content-body" id="theoryContentBody">
@@ -54,7 +54,68 @@
                   </div>
                </div>
                <article class="theory-article col-lg">
-                  Статья
+                  <section class="theory-article-summary summary">
+                     Article
+                  </section>
+                  <section class="theory-article-tasks tasks">
+                     Tasks
+                     <form action="/apply/" method="POST" id="tasks">
+                        <div class="tasks-translate task">
+                           <h5 class="task-heading">Task 1</h5>
+                           <p class="task-description">Write a fruit idiom with the meaning</p>
+                           <div class="tasks-translate-one form-group row">
+                              <div class="tasks-translate-one-label col-12 col-md-4">
+                                 <label class="form-label" for="task1-1">Desired or loved one</label>
+                              </div>
+                              <div class="tasks-translate-one-input col-12 col-md-8">
+                                 <input type="text" class="form-control" name="task1-1" id="task1-1">
+                                 <div class="valid-feedback invisible">The apple of my eye</div>
+                              </div>
+                           </div>
+                           <div class="tasks-translate-one form-group row">
+                              <div class="tasks-translate-one-label col-12 col-md-4">
+                                 <label class="form-label" for="task1-2">To compare incomparable things</label>
+                              </div>
+                              <div class="tasks-translate-one-input col-12 col-md-8">
+                                 <input type="text" class="form-control" name="task1-2" id="task1-2">
+                                 <div class="valid-feedback invisible">Apples and oranges</div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="tasks-text task">
+                           <h5 class="task-heading">Task 2</h5>
+                           <p class="task-description">Insert the missing idioms into the text</p>
+                           <div class="tasks-text-p paragraph">
+                              Lorem ipsum dolor sit amet
+                              <div class="paragraph-one form-group">
+                                 <select class="paragraph-one-select form-select" name="task2-1" id="task2-1">
+                                    <option value=" " label=" " selected></option>
+                                    <option value="1">maiores</option>
+                                    <option value="2">nisi</option>
+                                    <option value="3">consectetur</option>
+                                    <option value="4">numquam</option>
+                                 </select>
+                                 <div class="invalid-feedback">2</div>
+                              </div>
+                              adipisicing elit. Eum pariatur laudantium nisi
+                              sequi
+                              <div class="paragraph-one form-group">
+                                 <select class="paragraph-one-select form-select" name="task2-2" id="task2-2">
+                                    <option value=" " label=" " selected></option>
+                                    <option value="1">eligendi</option>
+                                    <option value="2">placeat</option>
+                                    <option value="3">nostrum</option>
+                                    <option value="4">elit</option>
+                                 </select>
+                                 <div class="invalid-feedback">2</div>
+                              </div>
+                              est velit consequuntur aliquam ducimus. Dolore harum nostrum iure saepe
+                              maiores, est atque mollitia placeat numquam.
+                           </div>
+                        </div>
+                        <button type="submit" class="tasks-btn btn btn-primary">Submit</button>
+                     </form>
+                  </section>
                </article>
             </div>
          </div>

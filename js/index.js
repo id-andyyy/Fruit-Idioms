@@ -25,3 +25,15 @@ function changeElementClasses() {
 
 changeElementClasses();
 window.addEventListener("resize", changeElementClasses);
+
+function serializeForm(formNode) {
+   return new FormData(formNode)
+}
+
+function handleFormSubmit(event) {
+   event.preventDefault();
+   console.log(Array.from(serializeForm(tasksForm).entries()))
+}
+
+const tasksForm = document.getElementById("tasks");
+tasksForm.addEventListener("submit", handleFormSubmit);
