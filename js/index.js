@@ -42,7 +42,7 @@ function handleFormSubmit(event) {
       let inputNode = document.getElementById(data[task][0]);
       let feedbackNode = document.getElementById(`feedback${taskNum}`);
 
-      if (data[task][1].toLowerCase().replace(/\./g, "") == feedbackNode.textContent.toLowerCase().replace(/\s/g, "")) {
+      if (data[task][1].toLowerCase().replace(/\./g, "").replace(/\s/g, "") == feedbackNode.textContent.toLowerCase().replace(/\s/g, "")) {
          points++;
 
          groupNode.classList.remove("has-danger");
