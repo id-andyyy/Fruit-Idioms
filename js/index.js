@@ -24,7 +24,6 @@ function changeElementClasses() {
 }
 
 changeElementClasses();
-window.addEventListener("resize", changeElementClasses);
 
 function serializeForm(formNode) {
    return new FormData(formNode);
@@ -77,7 +76,7 @@ function handleFormSubmit(event) {
    tasksResultProgressNode.classList.remove("bg-danger", "bg-warning", "bg-success");
    if (result < 40) {
       tasksResultProgressNode.classList.add("bg-danger");
-   } else if (result < 60) {
+   } else if (result < 70) {
       tasksResultProgressNode.classList.add("bg-warning");
    } else {
       tasksResultProgressNode.classList.add("bg-success");
