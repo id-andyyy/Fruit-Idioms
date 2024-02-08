@@ -13,7 +13,10 @@
 .tasks-translate-one {
    margin: 0 0 10px;
 }
-.paragraph-one, .paragraph-one-select {
-   width: fit-content;
+.task-text-paragraph {
    display: inline;
+}
+.missed, .missed-select, .missed__feedback {
+   width: fit-content;
+   display: inline!important;
 }

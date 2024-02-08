@@ -9,8 +9,6 @@
    <link href="css/bootstrap.min.css" rel="stylesheet">
    <link href="css/style.css" rel="stylesheet">
    <script src="js/index.js" defer></script>
-
-
 </head>
 
 <body>
@@ -63,62 +61,68 @@
                         <div class="tasks-translate task">
                            <h5 class="task-heading">Task 1</h5>
                            <p class="task-description">Write a fruit idiom with the meaning</p>
-                           <div class="tasks-translate-one form-group row">
+                           <div class="tasks-translate-one form-group row" id="group1-1">
                               <div class="tasks-translate-one-label col-12 col-md-4">
                                  <label class="form-label" for="task1-1">Desired or loved one</label>
                               </div>
                               <div class="tasks-translate-one-input col-12 col-md-8">
                                  <input type="text" class="form-control" name="task1-1" id="task1-1">
-                                 <div class="valid-feedback invisible">The apple of my eye</div>
+                                 <div class="invisible" id="feedback1-1">The apple of my eye</div>
                               </div>
                            </div>
-                           <div class="tasks-translate-one form-group row">
+                           <div class="tasks-translate-one form-group row" id="group1-2">
                               <div class="tasks-translate-one-label col-12 col-md-4">
                                  <label class="form-label" for="task1-2">To compare incomparable things</label>
                               </div>
                               <div class="tasks-translate-one-input col-12 col-md-8">
                                  <input type="text" class="form-control" name="task1-2" id="task1-2">
-                                 <div class="valid-feedback invisible">Apples and oranges</div>
+                                 <div class="invisible" id="feedback1-2">Apples and oranges</div>
                               </div>
                            </div>
                         </div>
                         <div class="tasks-text task">
                            <h5 class="task-heading">Task 2</h5>
                            <p class="task-description">Insert the missing idioms into the text</p>
-                           <div class="tasks-text-p paragraph">
+                           <div class="task-text-paragraph">
                               Lorem ipsum dolor sit amet
-                              <div class="paragraph-one form-group">
-                                 <select class="paragraph-one-select form-select" name="task2-1" id="task2-1">
-                                    <option value=" " label=" " selected></option>
-                                    <option value="1">maiores</option>
-                                    <option value="2">nisi</option>
-                                    <option value="3">consectetur</option>
-                                    <option value="4">numquam</option>
-                                 </select>
-                                 <div class="invalid-feedback">2</div>
+                           </div>
+                           <div class="task-text-missed missed form-group" id="group2-1">
+                              <select class="missed-select form-select" name="task2-1" id="task2-1">
+                                 <option label=" " selected></option>
+                                 <option>maiores</option>
+                                 <option>nisi</option>
+                                 <option>consectetur</option>
+                                 <option>numquam</option>
+                              </select>
+                              <div class="missed__feedback invisible position-absolute" id="feedback2-1">consectetur
                               </div>
-                              adipisicing elit. Eum pariatur laudantium nisi
-                              sequi
-                              <div class="paragraph-one form-group">
-                                 <select class="paragraph-one-select form-select" name="task2-2" id="task2-2">
-                                    <option value=" " label=" " selected></option>
-                                    <option value="1">eligendi</option>
-                                    <option value="2">placeat</option>
-                                    <option value="3">nostrum</option>
-                                    <option value="4">elit</option>
-                                 </select>
-                                 <div class="invalid-feedback">2</div>
-                              </div>
+                           </div>
+                           <div class="task-text-paragraph">
+                              adipisicing elit. Eum pariatur laudantium nisi sequi
+                           </div>
+                           <div class="task-text-missed missed form-group" id="group2-2">
+                              <select class="missed-select form-select" name="task2-2" id="task2-2">
+                                 <option label=" " selected></option>
+                                 <option>eligendi</option>
+                                 <option>placeat</option>
+                                 <option>nostrum</option>
+                                 <option>elit</option>
+                              </select>
+                              <div class="missed__feedback invisible position-absolute" id="feedback2-2">eligendi</div>
+                           </div>
+                           <div class="task-text-paragraph">
                               est velit consequuntur aliquam ducimus. Dolore harum nostrum iure saepe
                               maiores, est atque mollitia placeat numquam.
                            </div>
+
                         </div>
-                        <button type="submit" class="tasks-btn btn btn-primary">Submit</button>
-                     </form>
-                  </section>
-               </article>
             </div>
-         </div>
+            <button type="submit" class="tasks-btn btn btn-primary">Submit</button>
+            </form>
+      </section>
+      </article>
+      </div>
+      </div>
       </section>
    </main>
 
