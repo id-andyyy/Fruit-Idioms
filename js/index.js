@@ -42,18 +42,27 @@ function handleFormSubmit(event) {
       let inputNode = document.getElementById(data[task][0]);
       let feedbackNode = document.getElementById(`feedback${taskNum}`);
 
-      feedbackNode.classList.remove("invisible", "position-absolute");
-      if (data[task][1].toLowerCase().replace(".", "") == feedbackNode.textContent.toLowerCase()) {
+      if (data[task][1].toLowerCase().replace(/\./g, "") == feedbackNode.textContent.toLowerCase().replace(/\s/g, "")) {
          points++;
+
+         groupNode.classList.remove("has-danger");
+         inputNode.classList.remove("is-invalid");
+         feedbackNode.classList.add("invisible", "position-absolute");
+         feedbackNode.classList.remove("invalid-feedback");
+
          groupNode.classList.add("has-success");
          inputNode.classList.add("is-valid");
-         feedbackNode.classList.add("valid-feedback");
       } else {
+         groupNode.classList.remove("has-success");
+         inputNode.classList.remove("is-valid");
+
          groupNode.classList.add("has-danger");
          inputNode.classList.add("is-invalid");
+         feedbackNode.classList.remove("invisible", "position-absolute");
          feedbackNode.classList.add("invalid-feedback");
       }
    }
+   console.log(points);
 }
 
 const tasksForm = document.getElementById("tasks");
