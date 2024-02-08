@@ -58,6 +58,13 @@
                   </section>
                   <section class="theory-article-tasks tasks">
                      <h4 class="tasks-heading">Tasks</h4>
+                     <div class="tasks-result invisible position-absolute" id="tasksResult">
+                        <h5 class="tasks-result__heading" id="tasksResultHeading">Your result: 0%</h5>
+                        <div class="progress">
+                           <div class="tasks-result__progress progress-bar" role="progressbar" aria-valuenow="0"
+                              aria-valuemin="0" aria-valuemax="100" id="tasksResultProgress"></div>
+                        </div>
+                     </div>
                      <form action="/apply/" method="POST" id="tasks">
                         <div class="tasks-translate task">
                            <h5 class="task-heading">Task 1</h5>

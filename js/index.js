@@ -35,7 +35,7 @@ function handleFormSubmit(event) {
 
    let data = Array.from(serializeForm(tasksForm).entries());
 
-   let points = 0;
+   let maxPoints = data.length, points = 0;
    for (let task in data) {
       let taskNum = data[task][0].substring(4);
       let groupNode = document.getElementById(`group${taskNum}`);
@@ -62,7 +62,26 @@ function handleFormSubmit(event) {
          feedbackNode.classList.add("invalid-feedback");
       }
    }
-   console.log(points);
+
+   let result = Math.round((points / maxPoints) * 100);
+   let tasksResultNode = document.getElementById("tasksResult");
+   let tasksResultHeadingNode = document.getElementById("tasksResultHeading");
+   let tasksResultProgressNode = document.getElementById("tasksResultProgress");
+
+   tasksResultNode.classList.remove("invisible");
+   tasksResultNode.classList.remove("position-absolute");
+   tasksResultHeadingNode.textContent = `Your result: ${result}%`;
+   tasksResultProgressNode.setAttribute("area-valuenow", result);
+   tasksResultProgressNode.style.width = `${result}%`;
+
+   tasksResultProgressNode.classList.remove("bg-danger", "bg-warning", "bg-success");
+   if (result < 40) {
+      tasksResultProgressNode.classList.add("bg-danger");
+   } else if (result < 60) {
+      tasksResultProgressNode.classList.add("bg-warning");
+   } else {
+      tasksResultProgressNode.classList.add("bg-success");
+   }
 }
 
 const tasksForm = document.getElementById("tasks");
