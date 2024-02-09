@@ -36,7 +36,7 @@ function handleFormSubmit(event) {
 
    let maxPoints = data.length, points = 0;
    for (let task in data) {
-      let taskNum = data[task][0].substring(4);
+      let taskNum = data[task][0].substring(2);
       let groupNode = document.getElementById(`group${taskNum}`);
       let inputNode = document.getElementById(data[task][0]);
       let feedbackNode = document.getElementById(`feedback${taskNum}`);
@@ -85,3 +85,21 @@ function handleFormSubmit(event) {
 
 const tasksForm = document.getElementById("tasks");
 tasksForm.addEventListener("submit", handleFormSubmit);
+
+let taskHelpBtnNode = document.getElementsByClassName("task-help__btn");
+for (let i in taskHelpBtnNode) {
+   taskHelpBtnNode[i].addEventListener("click", function () {
+      let helpBtnId = this.id.substring(4);
+      let groupNode = document.getElementById(`group${helpBtnId}`);
+      let inputNode = document.getElementById(`te${helpBtnId}`);
+      let feedbackNode = document.getElementById(`feedback${helpBtnId}`);
+
+      groupNode.classList.remove("has-success");
+      inputNode.classList.remove("is-valid");
+
+      groupNode.classList.add("has-danger");
+      inputNode.classList.add("is-invalid");
+      feedbackNode.classList.remove("invisible", "position-absolute");
+      feedbackNode.classList.add("invalid-feedback");
+   });
+}
