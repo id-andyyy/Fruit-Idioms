@@ -16,7 +16,7 @@ function changeElementClasses() {
 
       theoryContentBodyNode.classList.toggle("offcanvas-body");
 
-      theoryContentHeaderBtnNode.classList.toggle("invisible");
+      theoryContentHeaderBtnNode.classList.toggle("d-none");
    } else {
       theoryContentNode.removeAttribute("tabindex");
       theoryContentNode.removeAttribute("aria-labelledby");
@@ -46,7 +46,7 @@ function handleFormSubmit(event) {
 
          groupNode.classList.remove("has-danger");
          inputNode.classList.remove("is-invalid");
-         feedbackNode.classList.add("invisible", "position-absolute");
+         feedbackNode.classList.add("d-none");
          feedbackNode.classList.remove("invalid-feedback");
 
          groupNode.classList.add("has-success");
@@ -57,7 +57,7 @@ function handleFormSubmit(event) {
 
          groupNode.classList.add("has-danger");
          inputNode.classList.add("is-invalid");
-         feedbackNode.classList.remove("invisible", "position-absolute");
+         feedbackNode.classList.remove("d-none");
          feedbackNode.classList.add("invalid-feedback");
       }
    }
@@ -67,8 +67,7 @@ function handleFormSubmit(event) {
    let tasksResultHeadingNode = document.getElementById("tasksResultHeading");
    let tasksResultProgressNode = document.getElementById("tasksResultProgress");
 
-   tasksResultNode.classList.remove("invisible");
-   tasksResultNode.classList.remove("position-absolute");
+   tasksResultNode.classList.remove("d-none");
    tasksResultHeadingNode.textContent = `Your result: ${result}%`;
    tasksResultProgressNode.setAttribute("area-valuenow", result);
    tasksResultProgressNode.style.width = `${result}%`;
@@ -99,7 +98,7 @@ for (let i in taskHelpBtnNode) {
 
       groupNode.classList.add("has-danger");
       inputNode.classList.add("is-invalid");
-      feedbackNode.classList.remove("invisible", "position-absolute");
+      feedbackNode.classList.remove("d-none");
       feedbackNode.classList.add("invalid-feedback");
    });
 }
