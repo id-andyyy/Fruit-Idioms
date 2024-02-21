@@ -13,10 +13,10 @@
 .tasks-result {
    margin: 15px 0 25px;
 }
-.tasks-translate-one {
+.task-one {
    margin: 0 0 10px;
 }
-.task-text-paragraph {
+.task-text {
    display: inline;
 }
 .missed, .missed-select, .missed__feedback {
