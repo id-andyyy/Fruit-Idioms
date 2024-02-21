@@ -1,7 +1,7 @@
-let theoryContentNode = document.getElementById("theoryContent");
-let theoryContentHeaderNode = document.getElementById("theoryContentHeader");
-let theoryContentBodyNode = document.getElementById("theoryContentBody");
-let theoryContentHeaderBtnNode = document.getElementById("theoryContentHeaderBtn");
+let theoryContentNode = document.querySelector("#theoryContent");
+let theoryContentHeaderNode = document.querySelector("#theoryContentHeader");
+let theoryContentBodyNode = document.querySelector("#theoryContentBody");
+let theoryContentHeaderBtnNode = document.querySelector("#theoryContentHeaderBtn");
 
 function changeElementClasses() {
    let windowWidth = window.innerWidth;
@@ -33,39 +33,67 @@ function handleFormSubmit(event) {
    event.preventDefault();
 
    let data = Array.from(serializeForm(tasksForm).entries());
+   console.log(data);
 
    let maxPoints = data.length, points = 0;
    for (let task in data) {
-      let taskNum = data[task][0].substring(2);
-      let groupNode = document.getElementById(`group${taskNum}`);
-      let inputNode = document.getElementById(data[task][0]);
-      let feedbackNode = document.getElementById(`feedback${taskNum}`);
+      let taskNum = data[task][0].substring(3, 6);
+      let taskType = data[task][0].substring(0, 2);
 
-      if (data[task][1].toLowerCase().replace(/\./g, "").replace(/\s/g, "") == feedbackNode.textContent.toLowerCase().replace(/\s/g, "")) {
-         points++;
+      let groupNode = document.querySelector(`#group-${taskNum}`);
+      let feedbackNode = document.querySelector(`#feedback-${taskNum}`);
 
-         groupNode.classList.remove("has-danger");
-         inputNode.classList.remove("is-invalid");
-         feedbackNode.classList.add("d-none");
-         feedbackNode.classList.remove("invalid-feedback");
-
-         groupNode.classList.add("has-success");
-         inputNode.classList.add("is-valid");
+      if (data[task][1] == 0) {
+         // pass
       } else {
-         groupNode.classList.remove("has-success");
-         inputNode.classList.remove("is-valid");
+         if (taskType == "ch") {
+            let inputNode = document.querySelector(`#${data[task][1].substring(0, 8)}`);
 
-         groupNode.classList.add("has-danger");
-         inputNode.classList.add("is-invalid");
-         feedbackNode.classList.remove("d-none");
-         feedbackNode.classList.add("invalid-feedback");
+            groupNode.classList.remove("has-danger", "has-success");
+            inputNode.classList.remove("is-invalid", "is-valid");
+
+            if (data[task][1][9] == "c") {
+               points++;
+
+               groupNode.classList.add("has-success");
+               inputNode.classList.add("is-valid");
+            } else {
+               let chooseInputNode = document.querySelectorAll('#group-1-1 input');
+               chooseInputNode.forEach((element) => {
+                  if (element.value.slice(-1) == "c") {
+                     element.classList.add("is-invalid");
+                  }
+               });
+            }
+         } else {
+            let inputNode = document.querySelector(`#${data[task][0]}`);
+            groupNode.classList.remove("has-danger", "has-success");
+            inputNode.classList.remove("is-invalid", "is-valid");
+
+
+            if (data[task][1].toLowerCase().replace(/\./g, "").replace(/\s/g, "") == feedbackNode.textContent.toLowerCase().replace(/\s/g, "")) {
+               points++;
+
+               groupNode.classList.add("has-success");
+               inputNode.classList.add("is-valid");
+
+               feedbackNode.classList.add("d-none");
+               feedbackNode.classList.remove("invalid-feedback");
+            } else {
+               groupNode.classList.add("has-danger");
+               inputNode.classList.add("is-invalid");
+
+               feedbackNode.classList.remove("d-none");
+               feedbackNode.classList.add("invalid-feedback");
+            }
+         }
       }
    }
 
    let result = Math.round((points / maxPoints) * 100);
-   let tasksResultNode = document.getElementById("tasksResult");
-   let tasksResultHeadingNode = document.getElementById("tasksResultHeading");
-   let tasksResultProgressNode = document.getElementById("tasksResultProgress");
+   let tasksResultNode = document.querySelector("#tasksResult");
+   let tasksResultHeadingNode = document.querySelector("#tasksResultHeading");
+   let tasksResultProgressNode = document.querySelector("#tasksResultProgress");
 
    tasksResultNode.classList.remove("d-none");
    tasksResultHeadingNode.textContent = `Your result: ${result}%`;
@@ -82,16 +110,15 @@ function handleFormSubmit(event) {
    }
 }
 
-const tasksForm = document.getElementById("tasks");
+const tasksForm = document.querySelector("#tasks");
 tasksForm.addEventListener("submit", handleFormSubmit);
 
-let taskHelpBtnNode = document.getElementsByClassName("task-help__btn");
-for (let i in taskHelpBtnNode) {
-   taskHelpBtnNode[i].addEventListener("click", function () {
+function getHelp() {
+   function showHelpButton(event) {
       let helpBtnId = this.id.substring(4);
-      let groupNode = document.getElementById(`group${helpBtnId}`);
-      let inputNode = document.getElementById(`te${helpBtnId}`);
-      let feedbackNode = document.getElementById(`feedback${helpBtnId}`);
+      let groupNode = document.querySelector(`#group${helpBtnId}`);
+      let inputNode = document.querySelector(`#te${helpBtnId}`);
+      let feedbackNode = document.querySelector(`#feedback${helpBtnId}`);
 
       groupNode.classList.remove("has-success");
       inputNode.classList.remove("is-valid");
@@ -100,5 +127,12 @@ for (let i in taskHelpBtnNode) {
       inputNode.classList.add("is-invalid");
       feedbackNode.classList.remove("d-none");
       feedbackNode.classList.add("invalid-feedback");
+   }
+
+   let taskHelpBtnNode = document.querySelectorAll(".task-help__btn");
+   taskHelpBtnNode.forEach((element) => {
+      element.addEventListener("click", showHelpButton, false);
    });
 }
+
+getHelp();

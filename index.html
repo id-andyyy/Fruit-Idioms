@@ -66,67 +66,106 @@
                         </div>
                      </div>
                      <form action="/apply/" method="POST" id="tasks">
-                        <div class="tasks-translate task">
+                        <div class="tasks-choose task">
                            <h5 class="task-heading">Task 1</h5>
-                           <p class="task-description">Write a fruit idiom with the meaning</p>
-                           <div class="tasks-translate-one form-group row" id="group1-1">
-                              <div class="tasks-translate-one-label col-12 col-md-4">
-                                 <label class="form-label" for="te1-1">Desired or loved one</label>
+                           <p class="task-description">Choose a translation of the idiom into Russian</p>
+                           <fieldset class="task-one form-group row" id="group-1-1">
+                              <div class="task-one-question col-12 col-md-6">
+                                 The apple never falls far from the tree
                               </div>
-                              <div class="tasks-translate-one-input col-9 col-md-6">
-                                 <input type="text" class="form-control" name="te1-1" id="te1-1">
-                                 <div class="d-none" id="feedback1-1">The apple of my eye</div>
+                              <div class="task-one-answer choose col-12 col-md-6">
+                                 <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="ch-1-1" id="ch-1-1-1"
+                                       value="ch-1-1-1-w">
+                                    <label class="form-check-label" for="ch-1-1-1">
+                                       Всё проще, чем кажется
+                                    </label>
+                                 </div>
+                                 <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="ch-1-1" id="ch-1-1-2"
+                                       value="ch-1-1-2-c">
+                                    <label class="form-check-label" for="ch-1-1-2">
+                                       Яблоко от яблони недалеко падает
+                                    </label>
+                                 </div>
+                                 <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="ch-1-1" id="ch-1-1-3"
+                                       value="ch-1-1-3-w">
+                                    <label class="form-check-label" for="ch-1-1-3">
+                                       Краткость сестра таланта
+                                    </label>
+                                 </div>
+                                 <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="ch-1-1" id="ch-1-1-4"
+                                       value="ch-1-1-4-w">
+                                    <label class="form-check-label" for="ch-1-1-4">
+                                       Яблоку негде упасть
+                                    </label>
+                                 </div>
                               </div>
-                              <div class="tasks-translate-one-help task-help col-3 col-md-2">
-                                 <button type="button" class="task-help__btn btn btn-info" id="help1-1">Help</button>
-                              </div>
-                           </div>
-                           <div class="tasks-translate-one form-group row" id="group1-2">
-                              <div class="tasks-translate-one-label col-12 col-md-4">
-                                 <label class="form-label" for="te1-2">To compare incomparable things</label>
-                              </div>
-                              <div class="tasks-translate-one-input col-9 col-md-6">
-                                 <input type="text" class="form-control" name="te1-2" id="te1-2">
-                                 <div class="d-none" id="feedback1-2">Apples and oranges</div>
-                              </div>
-                              <div class="tasks-translate-one-help task-help col-3 col-md-2">
-                                 <button type="button" class="task-help__btn btn btn-info" id="help1-2">Help</button>
-                              </div>
-                           </div>
+                           </fieldset>
                         </div>
                         <div class="tasks-text task">
-                           <h5 class="task-heading">Task 2</h5>
+                           <h5 class="task-heading">Task 3</h5>
                            <p class="task-description">Insert the missing idioms into the text</p>
                            <div class="task-text-paragraph">
                               Lorem ipsum dolor sit amet
                            </div>
-                           <div class="task-text-missed missed form-group" id="group2-1">
-                              <select class="missed-select form-select" name="se2-1" id="se2-1">
+                           <div class="task-text-missed missed form-group" id="group-2-1">
+                              <select class="missed-select form-select" name="se-2-1" id="se-2-1">
                                  <option label=" " selected></option>
                                  <option>mollitia</option>
                                  <option>saepe</option>
                                  <option>consectetur</option>
                                  <option>maiores</option>
                               </select>
-                              <div class="missed__feedback d-none" id="feedback2-1">consectetur
+                              <div class="missed__feedback d-none" id="feedback-2-1">consectetur
                               </div>
                            </div>
                            <div class="task-text-paragraph">
                               adipisicing elit. Eum pariatur laudantium nisi sequi
                            </div>
-                           <div class="task-text-missed missed form-group" id="group2-2">
-                              <select class="missed-select form-select" name="se2-2" id="se2-2">
+                           <div class="task-text-missed missed form-group" id="group-2-2">
+                              <select class="missed-select form-select" name="se-2-2" id="se-2-2">
                                  <option label=" " selected></option>
                                  <option>eligendi</option>
                                  <option>placeat</option>
                                  <option>nostrum</option>
                                  <option>elit</option>
                               </select>
-                              <div class="missed__feedback d-none" id="feedback2-2">eligendi</div>
+                              <div class="missed__feedback d-none" id="feedback-2-2">eligendi</div>
                            </div>
                            <div class="task-text-paragraph">
                               est velit consequuntur aliquam ducimus. Dolore harum nostrum iure saepe
                               maiores, est atque mollitia placeat numquam.
+                           </div>
+                        </div>
+                        <div class="tasks-translate task">
+                           <h5 class="task-heading">Task 4</h5>
+                           <p class="task-description">Write a fruit idiom with the meaning</p>
+                           <div class="tasks-translate-one form-group row" id="group-4-1">
+                              <div class="tasks-translate-one-label col-12 col-md-4">
+                                 <label class="form-label" for="te-4-1">Desired or loved one</label>
+                              </div>
+                              <div class="tasks-translate-one-input col-9 col-md-6">
+                                 <input type="text" class="form-control" name="te-4-1" id="te-4-1">
+                                 <div class="d-none" id="feedback-4-1">The apple of my eye</div>
+                              </div>
+                              <div class="tasks-translate-one-help task-help col-3 col-md-2">
+                                 <button type="button" class="task-help__btn btn btn-info" id="help-4-1">Help</button>
+                              </div>
+                           </div>
+                           <div class="tasks-translate-one form-group row" id="group-4-2">
+                              <div class="tasks-translate-one-label col-12 col-md-4">
+                                 <label class="form-label" for="te-4-2">To compare incomparable things</label>
+                              </div>
+                              <div class="tasks-translate-one-input col-9 col-md-6">
+                                 <input type="text" class="form-control" name="te-4-2" id="te-4-2">
+                                 <div class="d-none" id="feedback-4-2">Apples and oranges</div>
+                              </div>
+                              <div class="tasks-translate-one-help task-help col-3 col-md-2">
+                                 <button type="button" class="task-help__btn btn btn-info" id="help-4-2">Help</button>
+                              </div>
                            </div>
                         </div>
                         <button type="submit" class="tasks-btn btn btn-primary">Done!</button>
