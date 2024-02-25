@@ -16,10 +16,17 @@
 .task-one {
    margin: 0 0 10px;
 }
+.input-table {
+   border-collapse: separate;
+   border-spacing: 50px 0;
+}
+.row-table-cell {
+   padding: 10px 0;
+}
 .task-text {
    display: inline;
 }
 .missed, .missed-select, .missed__feedback {
    width: fit-content;
-   display: inline!important;
+   display: inline;
 }

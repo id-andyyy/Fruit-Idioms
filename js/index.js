@@ -33,7 +33,6 @@ function handleFormSubmit(event) {
    event.preventDefault();
 
    let data = Array.from(serializeForm(tasksForm).entries());
-   console.log(data);
 
    let maxPoints = data.length, points = 0;
    for (let task in data) {
@@ -46,7 +45,7 @@ function handleFormSubmit(event) {
       if (data[task][1] == 0) {
          // pass
       } else {
-         if (taskType == "ch") {
+         if (taskType == "ra") {
             let inputNode = document.querySelector(`#${data[task][1].substring(0, 8)}`);
 
             groupNode.classList.remove("has-danger", "has-success");
