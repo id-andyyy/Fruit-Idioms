@@ -4,7 +4,7 @@
 }
 /* Content */
 .theory-content-body-list-one__link {
-   color: black;
+   color: unset;
    text-decoration: none;
 }
 /* Summary */
