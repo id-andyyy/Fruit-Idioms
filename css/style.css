@@ -7,6 +7,15 @@
    text-decoration: none;
 }
 /* Summary */
+.article-point {
+   margin-bottom: 0px;
+}
+.summary-one-meaning, .summary-one-examples {
+   margin-top: 5px;
+}
+.summary-one-origin {
+   margin-top: 5px;
+}
 .examples-list-item-text__rus {
    color: #a6a6a6
 }
