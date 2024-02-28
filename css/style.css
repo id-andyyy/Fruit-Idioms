@@ -6,6 +6,10 @@
 .idioms-one__link {
    text-decoration: none;
 }
+/* Summary */
+.examples-list-item-text__rus {
+   color: #a6a6a6
+}
 /* Test */
 .task {
    margin: 0 0 10px;
