@@ -38,7 +38,7 @@ function addArticles() {
             articleElement.classList.add("summary-one", "card", `border-${articleData.color}`, "mb-3");
 
             let titleElement = document.createElement("h5");
-            titleElement.classList.add("summary-one__heading", "card-header".split(" "));
+            titleElement.classList.add("summary-one__heading", "card-header");
             titleElement.id = titleString;
             titleElement.textContent = articleData.title;
             articleElement.appendChild(titleElement);
