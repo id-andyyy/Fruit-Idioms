@@ -9,7 +9,14 @@
 }
 /* Summary */
 .article-point {
+   font-weight: 300;
    margin-bottom: 0px;
+}
+.article-point__big {
+   font-size: 1.25rem
+}
+.article-point__small {
+   font-size: 1rem;
 }
 .summary-one-meaning, .summary-one-examples {
    margin-top: 5px;
