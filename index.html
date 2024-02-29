@@ -16,7 +16,10 @@
    <header class="header">
       <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
          <div class="container">
-            <a class="navbar-brand" href="#">Fruit idioms</a>
+            <a class="navbar-brand" href="#">
+               <img src="/assets/logo.png" alt="Logo" width="24" height="24" class="d-inline-block align-text-top">
+               Fruit idioms
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#theoryContent"
                aria-controls="theoryContent">
                <span class="navbar-toggler-icon"></span>
@@ -35,27 +38,26 @@
                         data-bs-dismiss="offcanvas" aria-label="Close" id="theoryContentHeaderBtn"></button>
                   </div>
                   <div class="theory-content-body" id="theoryContentBody">
-                     <ul class="theory-content-body-idioms idioms list-group">
+                     <ul class="theory-content-body-list list-group">
                         <li
-                           class="idioms-one list-group-item list-group-item-primary d-flex justify-content-between align-items-center">
-                           <a class="idioms-one__link" href="#The-apple-of-my-eye">The apple of my eye</a>
+                           class="theory-content-body-list-one list-group-item list-group-item-primary d-flex justify-content-between align-items-center">
+                           <a class="theory-content-body-list-one__link" href="#TheAppleOfMyEye">The apple of my eye</a>
                         </li>
                         <li
-                           class="list-group-item list-group-item-secondary d-flex justify-content-between align-items-center">
-                           <a class="idioms-one__link" href="#Apples-and-oranges">Apples and oranges</a>
+                           class="theory-content-body-list-one list-group-item list-group-item-secondary d-flex justify-content-between align-items-center">
+                           <a class="theory-content-body-list-one__link" href="#ApplesAndOranges">Apples and oranges</a>
                         </li>
                         <li
-                           class="list-group-item list-group-item-info d-flex justify-content-between align-items-center">
-                           <a class="idioms-one__link" href="#The-apple-never-falls-far-from-the-tree">The apple never
-                              falls far from the tree</a>
+                           class="theory-content-body-list-one list-group-item list-group-item-info d-flex justify-content-between align-items-center">
+                           <a class="theory-content-body-list-one__link" href="#TheAppleNeverFallsFarFromTheTree">The
+                              apple never falls far from the tree</a>
                         </li>
                      </ul>
                   </div>
                </div>
-               <article class="theory-article col-lg">
-                  <section class="theory-article-summary summary">
-                     <h4 class="summary-heading">Article</h4>
-                     Some text here
+               <section class="theory-articles col-lg">
+                  <section class="theory-articles-summary summary" id="theoryArticlesSummary">
+                     <h4 class="summary-heading">Idioms</h4>
                   </section>
                   <section class="theory-article-tasks tasks">
                      <h4 class="tasks-heading">Tasks</h4>
@@ -234,7 +236,7 @@
                         <button type="submit" class="tasks-btn btn btn-primary">Done!</button>
                      </form>
                   </section>
-               </article>
+               </section>
             </div>
          </div>
       </section>
