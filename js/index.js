@@ -25,6 +25,7 @@ function changeElementClasses() {
 
 function addArticles() {
    let articlesFragment = document.createDocumentFragment();
+   let contentFragment = document.createDocumentFragment();
 
    fetch("..\\data\\articles.json")
       .then(response => response.json())
@@ -33,6 +34,17 @@ function addArticles() {
 
          articlesData.forEach((articleData) => {
             let titleString = articleData.title.replace(/\b\w/g, (c) => c.toUpperCase()).split(" ").join("");
+
+            let contentItemElement = document.createElement("li");
+            contentItemElement.classList.add("theory-content-body-list-one", "list-group-item", `list-group-item-${articleData.color}`, "d-flex", "justify-content-between", "align-items-center");
+
+            let contentItemElementLink = document.createElement("a");
+            contentItemElementLink.classList.add("theory-content-body-list-one__link");
+            contentItemElementLink.href = `#${titleString}`;
+            contentItemElementLink.textContent = articleData.title;
+            contentItemElement.appendChild(contentItemElementLink);
+
+            contentFragment.appendChild(contentItemElement);
 
             let articleElement = document.createElement("article");
             articleElement.classList.add("summary-one", "card", `border-${articleData.color}`, "mb-3");
@@ -133,6 +145,9 @@ function addArticles() {
 
             articlesFragment.appendChild(articleElement);
          });
+
+         let theoryContentBodyList = document.querySelector("#theoryContentBodyList");
+         theoryContentBodyList.appendChild(contentFragment);
 
          let theoryArticlesSummary = document.querySelector("#theoryArticlesSummary");
          theoryArticlesSummary.appendChild(articlesFragment);
