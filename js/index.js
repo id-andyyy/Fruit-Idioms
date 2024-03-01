@@ -1,4 +1,4 @@
-function changeElementClasses() {
+function changeContentLocation() {
    let theoryContentNode = document.querySelector("#theoryContent");
    let theoryContentHeaderNode = document.querySelector("#theoryContentHeader");
    let theoryContentBodyNode = document.querySelector("#theoryContentBody");
@@ -24,8 +24,6 @@ function changeElementClasses() {
 }
 
 function addArticles() {
-   let articlesFragment = document.createDocumentFragment();
-
    fetch("..\\data\\articles.json")
       .then(response => response.json())
       .then(data => {
@@ -155,7 +153,7 @@ function getHelp() {
    });
 }
 
-changeElementClasses();
+changeContentLocation();
 
 addArticles();
 
