@@ -10,9 +10,65 @@
    <link href="css/bootstrap.min.css" rel="stylesheet">
    <link href="css/style.css" rel="stylesheet">
    <script src="js/index.js" defer></script>
+   <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.min.js"></script>
 </head>
 
 <body>
+   <script type="text/x-handlebars-template" id="contentTemplate">
+      <li class="theory-content-body-list-one list-group-item list-group-item-{{color}} d-flex justify-content-between align-items-center">
+         <a class="theory-content-body-list-one__link" href="#{{id}}">{{title}}</a>
+      </li>
+   </script>
+   <script type="text/x-handlebars-template" id="articleTemplate">
+      <article class="summary-one card border-{{color}} mb-3">
+         <h5 class="summary-one__heading card-header" id="#{{id}}">{{title}}</h5>
+         <div class="card-body">
+            <p class="summary-one__meaning article-point article-point__big">Значение: {{meaning}}</p>
+            <p class="summary-one__literally article-point article-point__small">Дословно: {{literally}}</p>
+            <p class="summary-one__synonyms article-point article-point__small">Синонимы: {{synonyms}}</p>
+            <div class="summary-one-examples examples">
+               <p class="examples-heading article-point article-point__small">Примеры:</p>
+               <ul class="examples-list list-group list-group-flush">
+                  {{#each examples}}
+                  <li class="examples-list-item list-group-item">
+                     <div class="examples-list-item-text">
+                        {{#with this}}
+                        <div class="examples-list-item-text__eng">
+                           {{eng}}
+                        </div>
+                        <div class="examples-list-item-text__rus">
+                           {{rus}}
+                        </div>
+                        {{/with}}
+                     </div>
+                  </li>
+                  {{/each}}
+               </ul>
+            </div>
+            <div class="summary-one-origin accordion" id="origin{{id}}">
+               <div class="accordion-item">
+                  <h6 class="accordion-header" id="heading{{id}}">
+                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapse{{id}}" aria-expanded="true"
+                        aria-controls="collapse{{id}}">
+                        Происхождение
+                     </button>
+                  </h6>
+                  <div id="collapse{{id}}" class="accordion-collapse collapse"
+                     aria-labelledby="heading{{id}}" data-bs-parent="#origin{{id}}">
+                     <div class="accordion-body">
+                        {{#each origin}}
+                        <p>
+                           {{this}}
+                        </p>
+                        {{/each}}
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </article>
+   </script>
    <header class="header">
       <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
          <div class="container">
@@ -38,20 +94,7 @@
                         data-bs-dismiss="offcanvas" aria-label="Close" id="theoryContentHeaderBtn"></button>
                   </div>
                   <div class="theory-content-body" id="theoryContentBody">
-                     <ul class="theory-content-body-list list-group">
-                        <li
-                           class="theory-content-body-list-one list-group-item list-group-item-primary d-flex justify-content-between align-items-center">
-                           <a class="theory-content-body-list-one__link" href="#TheAppleOfMyEye">The apple of my eye</a>
-                        </li>
-                        <li
-                           class="theory-content-body-list-one list-group-item list-group-item-secondary d-flex justify-content-between align-items-center">
-                           <a class="theory-content-body-list-one__link" href="#ApplesAndOranges">Apples and oranges</a>
-                        </li>
-                        <li
-                           class="theory-content-body-list-one list-group-item list-group-item-info d-flex justify-content-between align-items-center">
-                           <a class="theory-content-body-list-one__link" href="#TheAppleNeverFallsFarFromTheTree">The
-                              apple never falls far from the tree</a>
-                        </li>
+                     <ul class="theory-content-body-list list-group" id="theoryContentBodyList">
                      </ul>
                   </div>
                </div>

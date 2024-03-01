@@ -1,9 +1,9 @@
-let theoryContentNode = document.querySelector("#theoryContent");
-let theoryContentHeaderNode = document.querySelector("#theoryContentHeader");
-let theoryContentBodyNode = document.querySelector("#theoryContentBody");
-let theoryContentHeaderBtnNode = document.querySelector("#theoryContentHeaderBtn");
+function changeContentLocation() {
+   let theoryContentNode = document.querySelector("#theoryContent");
+   let theoryContentHeaderNode = document.querySelector("#theoryContentHeader");
+   let theoryContentBodyNode = document.querySelector("#theoryContentBody");
+   let theoryContentHeaderBtnNode = document.querySelector("#theoryContentHeaderBtn");
 
-function changeElementClasses() {
    let windowWidth = window.innerWidth;
 
    if (windowWidth < 992) {
@@ -24,118 +24,26 @@ function changeElementClasses() {
 }
 
 function addArticles() {
-   let articlesFragment = document.createDocumentFragment();
-
    fetch("..\\data\\articles.json")
       .then(response => response.json())
       .then(data => {
          let articlesData = data;
 
+         let contentSource = document.querySelector("#contentTemplate").innerHTML;
+         let contentTemplate = Handlebars.compile(contentSource);
+         let theoryContentBodyList = document.querySelector("#theoryContentBodyList");
+
+         let articleSource = document.querySelector("#articleTemplate").innerHTML;
+         let articleTemplate = Handlebars.compile(articleSource);
+         let theoryArticlesSummary = document.querySelector("#theoryArticlesSummary");
+
          articlesData.forEach((articleData) => {
             let titleString = articleData.title.replace(/\b\w/g, (c) => c.toUpperCase()).split(" ").join("");
+            articleData.id = titleString;
 
-            let articleElement = document.createElement("article");
-            articleElement.classList.add("summary-one", "card", `border-${articleData.color}`, "mb-3");
-
-            let titleElement = document.createElement("h5");
-            titleElement.classList.add("summary-one__heading", "card-header");
-            titleElement.id = titleString;
-            titleElement.textContent = articleData.title;
-            articleElement.appendChild(titleElement);
-
-            let bodyElement = document.createElement("div");
-            bodyElement.classList.add("card-body");
-            articleElement.appendChild(bodyElement);
-
-            let meaningElement = document.createElement("p");
-            meaningElement.classList.add("summary-one__meaning", "article-point", "article-point__big");
-            meaningElement.textContent = `Значение: ${articleData.meaning}`;
-            bodyElement.appendChild(meaningElement);
-
-            let literallyElement = document.createElement("p");
-            literallyElement.classList.add("summary-one__literally", "article-point", "article-point__small");
-            literallyElement.textContent = `Дословно: ${articleData.literally}`;
-            bodyElement.appendChild(literallyElement);
-
-            let synonymsElement = document.createElement("p");
-            synonymsElement.classList.add("summary-one__synonyms", "article-point", "article-point__small");
-            synonymsElement.textContent = `Синонимы: ${articleData.meaning}`;
-            bodyElement.appendChild(synonymsElement);
-
-            let examplesElement = document.createElement("div");
-            examplesElement.classList.add("summary-one-examples", "examples");
-            bodyElement.appendChild(examplesElement);
-
-            let examplesHeadingElement = document.createElement("p");
-            examplesHeadingElement.classList.add("examples-heading", "article-point", "article-point__small");
-            examplesHeadingElement.textContent = "Примеры:";
-            examplesElement.appendChild(examplesHeadingElement);
-
-            let examplesListElement = document.createElement("ul");
-            examplesListElement.classList.add("examples-list", "list-group", "list-group-flush");
-            examplesElement.appendChild(examplesListElement);
-
-            articleData.examples.forEach((exampleData) => {
-               let examplesListItemElement = document.createElement("li");
-               examplesListItemElement.classList.add("examples-list-item", "list-group-item");
-               examplesListElement.appendChild(examplesListItemElement);
-
-               let examplesListItemEngElement = document.createElement("div");
-               examplesListItemEngElement.classList.add("examples-list-item__eng");
-               examplesListItemEngElement.textContent = exampleData.eng;
-               examplesListItemElement.appendChild(examplesListItemEngElement);
-
-               let examplesListItemRusElement = document.createElement("div");
-               examplesListItemRusElement.classList.add("examples-list-item__rus");
-               examplesListItemRusElement.textContent = exampleData.rus;
-               examplesListItemElement.appendChild(examplesListItemRusElement);
-            });
-
-            let originElement = document.createElement("div");
-            originElement.classList.add("summary-one-origin", "accordion");
-            originElement.id = `origin${titleString}`;
-            bodyElement.appendChild(originElement);
-
-            let originItemElement = document.createElement("div");
-            originItemElement.classList.add("accordion-item");
-            originElement.appendChild(originItemElement);
-
-            let originHeadingElement = document.createElement("h6");
-            originHeadingElement.classList.add("accordion-header");
-            originHeadingElement.id = `heading${titleString}`;
-            originItemElement.appendChild(originHeadingElement);
-
-            let originButtonElement = document.createElement("button");
-            originButtonElement.classList.add("accordion-button", "collapsed");
-            originButtonElement.type = "button";
-            originButtonElement.dataset.bsToggle = "collapse";
-            originButtonElement.dataset.bsTarget = `#collapse${titleString}`;
-            originButtonElement.ariaExpanded = "true";
-            originButtonElement.textContent = "Происхождение";
-            originHeadingElement.appendChild(originButtonElement);
-
-            let originCollapseElement = document.createElement("div");
-            originCollapseElement.classList.add("accordion-collapse", "collapse");
-            originCollapseElement.id = `collapse${titleString}`;
-            originCollapseElement.setAttribute("aria-labelledby", `heading${titleString}`);
-            originCollapseElement.dataset.bsParent = `#origin${titleString}`;
-            originItemElement.appendChild(originCollapseElement);
-
-            let originBodyElement = document.createElement("div");
-            originBodyElement.classList.add("accordion-body");
-            originCollapseElement.appendChild(originBodyElement);
-
-            articleData.origin.forEach((origin) => {
-               let originBodyItemElement = document.createElement("p");
-               originBodyItemElement.textContent = origin;
-               originBodyElement.appendChild(originBodyItemElement);
-            });
-
-            articlesFragment.appendChild(articleElement);
+            theoryContentBodyList.innerHTML += contentTemplate(articleData);
+            theoryArticlesSummary.innerHTML += articleTemplate(articleData);
          });
-
-         let theoryArticlesSummary = document.querySelector("#theoryArticlesSummary");
-         theoryArticlesSummary.appendChild(articlesFragment);
       });
 }
 
@@ -245,7 +153,7 @@ function getHelp() {
    });
 }
 
-changeElementClasses();
+changeContentLocation();
 
 addArticles();
 
