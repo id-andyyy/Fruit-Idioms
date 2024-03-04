@@ -1,9 +1,9 @@
-let theoryContentNode = document.querySelector("#theoryContent");
-let theoryContentHeaderNode = document.querySelector("#theoryContentHeader");
-let theoryContentBodyNode = document.querySelector("#theoryContentBody");
-let theoryContentHeaderBtnNode = document.querySelector("#theoryContentHeaderBtn");
+function changeContentLocation() {
+   let theoryContentNode = document.querySelector("#theoryContent");
+   let theoryContentHeaderNode = document.querySelector("#theoryContentHeader");
+   let theoryContentBodyNode = document.querySelector("#theoryContentBody");
+   let theoryContentHeaderBtnNode = document.querySelector("#theoryContentHeaderBtn");
 
-function changeElementClasses() {
    let windowWidth = window.innerWidth;
 
    if (windowWidth < 992) {
@@ -23,7 +23,29 @@ function changeElementClasses() {
    }
 }
 
-changeElementClasses();
+function addArticles() {
+   fetch("..\\data\\articles.json")
+      .then(response => response.json())
+      .then(data => {
+         let articlesData = data;
+
+         let contentSource = document.querySelector("#contentTemplate").innerHTML;
+         let contentTemplate = Handlebars.compile(contentSource);
+         let theoryContentBodyList = document.querySelector("#theoryContentBodyList");
+
+         let articleSource = document.querySelector("#articleTemplate").innerHTML;
+         let articleTemplate = Handlebars.compile(articleSource);
+         let theoryArticlesSummary = document.querySelector("#theoryArticlesSummary");
+
+         articlesData.forEach((articleData) => {
+            let titleString = articleData.title.replace(/\b\w/g, (c) => c.toUpperCase()).split(" ").join("");
+            articleData.id = titleString;
+
+            theoryContentBodyList.innerHTML += contentTemplate(articleData);
+            theoryArticlesSummary.innerHTML += articleTemplate(articleData);
+         });
+      });
+}
 
 function serializeForm(formNode) {
    return new FormData(formNode);
@@ -109,9 +131,6 @@ function handleFormSubmit(event) {
    }
 }
 
-const tasksForm = document.querySelector("#tasks");
-tasksForm.addEventListener("submit", handleFormSubmit);
-
 function getHelp() {
    function showHelpButton(event) {
       let helpBtnId = this.id.substring(4);
@@ -133,5 +152,12 @@ function getHelp() {
       element.addEventListener("click", showHelpButton, false);
    });
 }
+
+changeContentLocation();
+
+addArticles();
+
+const tasksForm = document.querySelector("#tasks");
+tasksForm.addEventListener("submit", handleFormSubmit);
 
 getHelp();

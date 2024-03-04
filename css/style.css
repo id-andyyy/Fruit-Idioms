@@ -3,8 +3,32 @@
    margin: 10px 0;
 }
 /* Content */
-.idioms-one__link {
+.theory-content-body-list-one__link {
+   color: unset;
    text-decoration: none;
+}
+/* Summary */
+.article-point {
+   font-weight: 300;
+   margin-bottom: 0px;
+}
+.article-point__big {
+   font-size: 1.25rem
+}
+.article-point__small {
+   font-size: 1.05rem;
+}
+.summary-one-meaning, .summary-one-examples {
+   margin-top: 5px;
+}
+.summary-one-origin {
+   margin-top: 5px;
+}
+.examples-list-item-text__eng_underlined {
+   text-decoration: underline;
+}
+.examples-list-item-text__rus {
+   color: #a6a6a6
 }
 /* Test */
 .task {
