@@ -2,26 +2,26 @@
 <html lang="ru">
 
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Fruit idioms</title>
-   <link href="assets/logo.png" rel="icon">
-   <link href="css/nullstyle.css" rel="stylesheet">
-   <link href="css/bootstrap.min.css" rel="stylesheet">
-   <link href="css/style.css" rel="stylesheet">
-   <script src="js/index.js" defer></script>
-   <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fruit idioms</title>
+  <link href="assets/logo.png" rel="icon">
+  <link href="css/nullstyle.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <script src="js/index.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.min.js"></script>
 </head>
 
 <body>
-   <script type="text/x-handlebars-template" id="contentTemplate">
+  <script type="text/x-handlebars-template" id="contentTemplate">
       <li class="theory-content-body-list-one list-group-item list-group-item-{{color}} d-flex justify-content-between align-items-center">
          <a class="theory-content-body-list-one__link" href="#{{id}}">{{title}}</a>
       </li>
    </script>
-   <script type="text/x-handlebars-template" id="articleTemplate">
+  <script type="text/x-handlebars-template" id="articleTemplate">
       <article class="summary-one card border-{{color}} mb-3">
-         <h5 class="summary-one__heading card-header" id="#{{id}}">{{title}}</h5>
+         <h5 class="summary-one__heading card-header" id="{{id}}">{{title}}</h5>
          <div class="card-body">
             <p class="summary-one__meaning article-point article-point__big">Значение: {{meaning}}</p>
             <p class="summary-one__literally article-point article-point__small">Дословно: {{literally}}</p>
@@ -69,225 +69,219 @@
          </div>
       </article>
    </script>
-   <header class="header">
-      <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
-         <div class="container">
-            <a class="navbar-brand" href="#">
-               <img src="/assets/logo.png" alt="Logo" width="24" height="24" class="d-inline-block align-text-top">
-               Fruit idioms
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#theoryContent"
-               aria-controls="theoryContent">
-               <span class="navbar-toggler-icon"></span>
-            </button>
-         </div>
-      </nav>
-   </header>
-   <main class="main">
-      <section class="theory">
-         <div class="container">
-            <div class="row">
-               <div class="theory-content col-lg-4" id="theoryContent">
-                  <div class="theory-content-header" id="theoryContentHeader">
-                     <h5 class="theory-content-header__title" id="offcanvasExampleLabel">Choose one of the idioms</h5>
-                     <button class="theory-content-header__btn btn-close d-none" type="button"
-                        data-bs-dismiss="offcanvas" aria-label="Close" id="theoryContentHeaderBtn"></button>
-                  </div>
-                  <div class="theory-content-body" id="theoryContentBody">
-                     <ul class="theory-content-body-list list-group" id="theoryContentBodyList">
-                     </ul>
-                  </div>
-               </div>
-               <section class="theory-articles col-lg">
-                  <section class="theory-articles-summary summary" id="theoryArticlesSummary">
-                     <h4 class="summary-heading">Idioms</h4>
-                  </section>
-                  <section class="theory-article-tasks tasks">
-                     <h4 class="tasks-heading">Tasks</h4>
-                     <div class="tasks-result d-none" id="tasksResult">
-                        <h5 class="tasks-result__heading" id="tasksResultHeading">Your result: 0%</h5>
-                        <div class="progress">
-                           <div class="tasks-result__progress progress-bar" role="progressbar" aria-valuenow="0"
-                              aria-valuemin="0" aria-valuemax="100" id="tasksResultProgress"></div>
-                        </div>
-                     </div>
-                     <form action="/apply/" method="POST" id="tasks">
-                        <div class="tasks-choose task">
-                           <h5 class="task-heading">Task 1</h5>
-                           <p class="task-description">Choose a translation of the idiom into Russian</p>
-                           <fieldset class="task-one form-group row" id="group-1-1">
-                              <div class="task-one-question col-12 col-md-6">
-                                 The apple never falls far from the tree
-                              </div>
-                              <div class="task-one-answer choose col-12 col-md-6">
-                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="ra-1-1" id="ra-1-1-1"
-                                       value="ra-1-1-1-w">
-                                    <label class="form-check-label" for="ra-1-1-1">
-                                       Всё проще, чем кажется
-                                    </label>
-                                 </div>
-                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="ra-1-1" id="ra-1-1-2"
-                                       value="ra-1-1-2-c">
-                                    <label class="form-check-label" for="ra-1-1-2">
-                                       Яблоко от яблони недалеко падает
-                                    </label>
-                                 </div>
-                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="ra-1-1" id="ra-1-1-3"
-                                       value="ra-1-1-3-w">
-                                    <label class="form-check-label" for="ra-1-1-3">
-                                       Краткость сестра таланта
-                                    </label>
-                                 </div>
-                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="ra-1-1" id="ra-1-1-4"
-                                       value="ra-1-1-4-w">
-                                    <label class="form-check-label" for="ra-1-1-4">
-                                       Яблоку негде упасть
-                                    </label>
-                                 </div>
-                              </div>
-                           </fieldset>
-                        </div>
-                        <div class="tasks-connect task">
-                           <h5 class="task-heading">Task 2</h5>
-                           <p class="task-description">Connect the beginning and the end of the idioms</p>
-                           <div class="task-question row">
-                              <div class="task-question-part col-6">
-                                 <ol type="A">
-                                    <li>To be in</li>
-                                    <li>To polish</li>
-                                    <li>To be full of</li>
-                                    <li>Life is</li>
-                                 </ol>
-                              </div>
-                              <div class="task-question-part col-6">
-                                 <ol>
-                                    <li>beans</li>
-                                    <li>one's apple</li>
-                                    <li>cherry condition</li>
-                                    <li>a bowl of cherries</li>
-                                 </ol>
-                              </div>
-                           </div>
-                           <div class="task-answer">
-                              <div class="task-answer-row form-group row" id="group-2-1">
-                                 <div class="task-answer-row-cell col-6">
-                                    <label class="form-label" for="te-2-1">A</label>
-                                 </div>
-                                 <div class="task-answer-row-cell col-6">
-                                    <input type="text" class="form-control" name="te-2-1" id="te-2-1">
-                                    <div class="d-none" id="feedback-2-1">3</div>
-                                 </div>
-                              </div>
-                              <div class="task-answer-row form-group row" id="group-2-2">
-                                 <div class="task-answer-row-cell col-6">
-                                    <label class="form-label" for="te-2-2">B</label>
-                                 </div>
-                                 <div class="task-answer-row-cell col-6">
-                                    <input type="text" class="form-control" name="te-2-2" id="te-2-2">
-                                    <div class="d-none" id="feedback-2-2">2</div>
-                                 </div>
-                              </div>
-                              <div class="task-answer-row form-group row" id="group-2-3">
-                                 <div class="task-answer-row-cell col-6">
-                                    <label class="form-label" for="te-2-3">C</label>
-                                 </div>
-                                 <div class="task-answer-row-cell col-6">
-                                    <input type="text" class="form-control" name="te-2-3" id="te-2-3">
-                                    <div class="d-none" id="feedback-2-3">1</div>
-                                 </div>
-                              </div>
-                              <div class="task-answer-row form-group row" id="group-2-4">
-                                 <div class="task-answer-row-cell col-6">
-                                    <label class="form-label" for="te-2-4">D</label>
-                                 </div>
-                                 <div class="task-answer-row-cell col-6">
-                                    <input type="text" class="form-control" name="te-2-4" id="te-2-4">
-                                    <div class="d-none" id="feedback-2-4">4</div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="tasks-text task">
-                           <h5 class="task-heading">Task 3</h5>
-                           <p class="task-description">Insert the missing idioms into the text</p>
-                           <div class="task-text">
-                              Lorem ipsum dolor sit amet
-                           </div>
-                           <div class="task-missed missed form-group" id="group-3-1">
-                              <select class="missed-select form-select" name="se-3-1" id="se-3-1">
-                                 <option label=" " selected></option>
-                                 <option>mollitia</option>
-                                 <option>saepe</option>
-                                 <option>consectetur</option>
-                                 <option>maiores</option>
-                              </select>
-                              <div class="missed__feedback d-none" id="feedback-3-1">consectetur
-                              </div>
-                           </div>
-                           <div class="task-text">
-                              adipisicing elit. Eum pariatur laudantium nisi sequi
-                           </div>
-                           <div class="task-missed missed form-group" id="group-3-2">
-                              <select class="missed-select form-select" name="se-3-2" id="se-3-2">
-                                 <option label=" " selected></option>
-                                 <option>eligendi</option>
-                                 <option>placeat</option>
-                                 <option>nostrum</option>
-                                 <option>elit</option>
-                              </select>
-                              <div class="missed__feedback d-none" id="feedback-3-2">eligendi</div>
-                           </div>
-                           <div class="task-text">
-                              est velit consequuntur aliquam ducimus. Dolore harum nostrum iure saepe
-                              maiores, est atque mollitia placeat numquam.
-                           </div>
-                        </div>
-                        <div class="tasks-translate task">
-                           <h5 class="task-heading">Task 4</h5>
-                           <p class="task-description">Write a fruit idiom with the meaning</p>
-                           <div class="task-one form-group row" id="group-4-1">
-                              <div class="task-one-question col-12 col-md-4">
-                                 <label class="form-label" for="te-4-1">Desired or loved one</label>
-                              </div>
-                              <div class="task-one-answer col-9 col-md-6">
-                                 <input type="text" class="form-control" name="te-4-1" id="te-4-1">
-                                 <div class="d-none" id="feedback-4-1">The apple of my eye</div>
-                              </div>
-                              <div class="task-one-help task-help col-3 col-md-2">
-                                 <button type="button" class="task-one-help__btn btn btn-info"
-                                    id="help-4-1">Help</button>
-                              </div>
-                           </div>
-                           <div class="task-one form-group row" id="group-4-2">
-                              <div class="task-one-question col-12 col-md-4">
-                                 <label class="form-label" for="te-4-2">To compare incomparable things</label>
-                              </div>
-                              <div class="tasks-one-answer col-9 col-md-6">
-                                 <input type="text" class="form-control" name="te-4-2" id="te-4-2">
-                                 <div class="d-none" id="feedback-4-2">Apples and oranges</div>
-                              </div>
-                              <div class="tasks-one-help task-help col-3 col-md-2">
-                                 <button type="button" class="task-one-help__btn btn btn-info"
-                                    id="help-4-2">Help</button>
-                              </div>
-                           </div>
-                        </div>
-                        <button type="submit" class="tasks-btn btn btn-primary">Done!</button>
-                     </form>
-                  </section>
-               </section>
+  <header class="header">
+    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="/assets/logo.png" alt="Logo" width="24" height="24" class="d-inline-block align-text-top">
+          Fruit idioms
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#theoryContent"
+          aria-controls="theoryContent">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+  <main class="main">
+    <section class="theory">
+      <div class="container">
+        <div class="row">
+          <div class="theory-content col-lg-4" id="theoryContent">
+            <div class="theory-content-header" id="theoryContentHeader">
+              <h5 class="theory-content-header__title" id="offcanvasExampleLabel">Choose one of the idioms</h5>
+              <button class="theory-content-header__btn btn-close d-none" type="button" data-bs-dismiss="offcanvas"
+                aria-label="Close" id="theoryContentHeaderBtn"></button>
             </div>
-         </div>
-      </section>
-   </main>
+            <div class="theory-content-body" id="theoryContentBody">
+              <ul class="theory-content-body-list list-group" id="theoryContentBodyList">
+              </ul>
+            </div>
+          </div>
+          <section class="theory-articles col-lg">
+            <section class="theory-articles-summary summary" id="theoryArticlesSummary">
+              <h4 class="summary-heading">Idioms</h4>
+            </section>
+            <section class="theory-article-tasks tasks">
+              <h4 class="tasks-heading">Tasks</h4>
+              <div class="tasks-result d-none" id="tasksResult">
+                <h5 class="tasks-result__heading" id="tasksResultHeading">Your result: 0%</h5>
+                <div class="progress">
+                  <div class="tasks-result__progress progress-bar" role="progressbar" aria-valuenow="0"
+                    aria-valuemin="0" aria-valuemax="100" id="tasksResultProgress"></div>
+                </div>
+              </div>
+              <form action="/apply/" method="POST" id="tasks">
+                <div class="tasks-choose task">
+                  <h5 class="task-heading">Task 1</h5>
+                  <p class="task-description">Choose a translation of the idiom into Russian</p>
+                  <fieldset class="task-one form-group row" id="group-1-1">
+                    <div class="task-one-question col-12 col-md-6">
+                      The apple never falls far from the tree
+                    </div>
+                    <div class="task-one-answer choose col-12 col-md-6">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="ra-1-1" id="ra-1-1-1" value="ra-1-1-1-w">
+                        <label class="form-check-label" for="ra-1-1-1">
+                          Всё проще, чем кажется
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="ra-1-1" id="ra-1-1-2" value="ra-1-1-2-c">
+                        <label class="form-check-label" for="ra-1-1-2">
+                          Яблоко от яблони недалеко падает
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="ra-1-1" id="ra-1-1-3" value="ra-1-1-3-w">
+                        <label class="form-check-label" for="ra-1-1-3">
+                          Краткость сестра таланта
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="ra-1-1" id="ra-1-1-4" value="ra-1-1-4-w">
+                        <label class="form-check-label" for="ra-1-1-4">
+                          Яблоку негде упасть
+                        </label>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+                <div class="tasks-connect task">
+                  <h5 class="task-heading">Task 2</h5>
+                  <p class="task-description">Connect the beginning and the end of the idioms</p>
+                  <div class="task-question row">
+                    <div class="task-question-part col-6">
+                      <ol type="A">
+                        <li>To be in</li>
+                        <li>To polish</li>
+                        <li>To be full of</li>
+                        <li>Life is</li>
+                      </ol>
+                    </div>
+                    <div class="task-question-part col-6">
+                      <ol>
+                        <li>beans</li>
+                        <li>one's apple</li>
+                        <li>cherry condition</li>
+                        <li>a bowl of cherries</li>
+                      </ol>
+                    </div>
+                  </div>
+                  <div class="task-answer">
+                    <div class="task-answer-row form-group row" id="group-2-1">
+                      <div class="task-answer-row-cell col-6">
+                        <label class="form-label" for="te-2-1">A</label>
+                      </div>
+                      <div class="task-answer-row-cell col-6">
+                        <input type="text" class="form-control" name="te-2-1" id="te-2-1">
+                        <div class="d-none" id="feedback-2-1">3</div>
+                      </div>
+                    </div>
+                    <div class="task-answer-row form-group row" id="group-2-2">
+                      <div class="task-answer-row-cell col-6">
+                        <label class="form-label" for="te-2-2">B</label>
+                      </div>
+                      <div class="task-answer-row-cell col-6">
+                        <input type="text" class="form-control" name="te-2-2" id="te-2-2">
+                        <div class="d-none" id="feedback-2-2">2</div>
+                      </div>
+                    </div>
+                    <div class="task-answer-row form-group row" id="group-2-3">
+                      <div class="task-answer-row-cell col-6">
+                        <label class="form-label" for="te-2-3">C</label>
+                      </div>
+                      <div class="task-answer-row-cell col-6">
+                        <input type="text" class="form-control" name="te-2-3" id="te-2-3">
+                        <div class="d-none" id="feedback-2-3">1</div>
+                      </div>
+                    </div>
+                    <div class="task-answer-row form-group row" id="group-2-4">
+                      <div class="task-answer-row-cell col-6">
+                        <label class="form-label" for="te-2-4">D</label>
+                      </div>
+                      <div class="task-answer-row-cell col-6">
+                        <input type="text" class="form-control" name="te-2-4" id="te-2-4">
+                        <div class="d-none" id="feedback-2-4">4</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tasks-text task">
+                  <h5 class="task-heading">Task 3</h5>
+                  <p class="task-description">Insert the missing idioms into the text</p>
+                  <div class="task-text">
+                    Lorem ipsum dolor sit amet
+                  </div>
+                  <div class="task-missed missed form-group" id="group-3-1">
+                    <select class="missed-select form-select" name="se-3-1" id="se-3-1">
+                      <option label=" " selected></option>
+                      <option>mollitia</option>
+                      <option>saepe</option>
+                      <option>consectetur</option>
+                      <option>maiores</option>
+                    </select>
+                    <div class="missed__feedback d-none" id="feedback-3-1">consectetur
+                    </div>
+                  </div>
+                  <div class="task-text">
+                    adipisicing elit. Eum pariatur laudantium nisi sequi
+                  </div>
+                  <div class="task-missed missed form-group" id="group-3-2">
+                    <select class="missed-select form-select" name="se-3-2" id="se-3-2">
+                      <option label=" " selected></option>
+                      <option>eligendi</option>
+                      <option>placeat</option>
+                      <option>nostrum</option>
+                      <option>elit</option>
+                    </select>
+                    <div class="missed__feedback d-none" id="feedback-3-2">eligendi</div>
+                  </div>
+                  <div class="task-text">
+                    est velit consequuntur aliquam ducimus. Dolore harum nostrum iure saepe
+                    maiores, est atque mollitia placeat numquam.
+                  </div>
+                </div>
+                <div class="tasks-translate task">
+                  <h5 class="task-heading">Task 4</h5>
+                  <p class="task-description">Write a fruit idiom with the meaning</p>
+                  <div class="task-one form-group row" id="group-4-1">
+                    <div class="task-one-question col-12 col-md-4">
+                      <label class="form-label" for="te-4-1">Desired or loved one</label>
+                    </div>
+                    <div class="task-one-answer col-9 col-md-6">
+                      <input type="text" class="form-control" name="te-4-1" id="te-4-1">
+                      <div class="d-none" id="feedback-4-1">The apple of my eye</div>
+                    </div>
+                    <div class="task-one-help task-help col-3 col-md-2">
+                      <button type="button" class="task-one-help__btn btn btn-info" id="help-4-1">Help</button>
+                    </div>
+                  </div>
+                  <div class="task-one form-group row" id="group-4-2">
+                    <div class="task-one-question col-12 col-md-4">
+                      <label class="form-label" for="te-4-2">To compare incomparable things</label>
+                    </div>
+                    <div class="tasks-one-answer col-9 col-md-6">
+                      <input type="text" class="form-control" name="te-4-2" id="te-4-2">
+                      <div class="d-none" id="feedback-4-2">Apples and oranges</div>
+                    </div>
+                    <div class="tasks-one-help task-help col-3 col-md-2">
+                      <button type="button" class="task-one-help__btn btn btn-info" id="help-4-2">Help</button>
+                    </div>
+                  </div>
+                </div>
+                <button type="submit" class="tasks-btn btn btn-primary">Done!</button>
+              </form>
+            </section>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
 
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-      crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>

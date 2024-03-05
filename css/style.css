@@ -1,56 +1,56 @@
 /* THEORY */
 .theory {
-   margin: 10px 0;
+  margin: 10px 0;
 }
 /* Content */
 .theory-content-body-list-one__link {
-   color: unset;
-   text-decoration: none;
+  color: unset;
+  text-decoration: none;
 }
 /* Summary */
 .article-point {
-   font-weight: 300;
-   margin-bottom: 0px;
+  font-weight: 300;
+  margin-bottom: 0px;
 }
 .article-point__big {
-   font-size: 1.25rem
+  font-size: 1.25rem
 }
 .article-point__small {
-   font-size: 1.05rem;
+  font-size: 1.05rem;
 }
 .summary-one-meaning, .summary-one-examples {
-   margin-top: 5px;
+  margin-top: 5px;
 }
 .summary-one-origin {
-   margin-top: 5px;
+  margin-top: 5px;
 }
 .examples-list-item-text__eng_underlined {
-   text-decoration: underline;
+  text-decoration: underline;
 }
 .examples-list-item-text__rus {
-   color: #a6a6a6
+  color: #a6a6a6
 }
 /* Test */
 .task {
-   margin: 0 0 10px;
+  margin: 0 0 10px;
 }
 .tasks-result {
-   margin: 15px 0 25px;
+  margin: 15px 0 25px;
 }
 .task-one {
-   margin: 0 0 10px;
+  margin: 0 0 10px;
 }
 .input-table {
-   border-collapse: separate;
-   border-spacing: 50px 0;
+  border-collapse: separate;
+  border-spacing: 50px 0;
 }
 .row-table-cell {
-   padding: 10px 0;
+  padding: 10px 0;
 }
 .task-text {
-   display: inline;
+  display: inline;
 }
 .missed, .missed-select, .missed__feedback {
-   width: fit-content;
-   display: inline;
+  width: fit-content;
+  display: inline;
 }
