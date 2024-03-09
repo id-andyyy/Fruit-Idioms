@@ -12,13 +12,14 @@
   font-weight: 300;
   margin-bottom: 0px;
 }
-.article-point__big {
-  font-size: 1.25rem
-}
 .article-point__small {
   font-size: 1.05rem;
 }
-.summary-one-meaning, .summary-one-examples {
+.article-point-header {
+  font-weight: 400;
+}
+.summary-one-meaning,
+.summary-one-examples {
   margin-top: 5px;
 }
 .summary-one-origin {
@@ -28,7 +29,7 @@
   text-decoration: underline;
 }
 .examples-list-item-text__rus {
-  color: #a6a6a6
+  color: #a6a6a6;
 }
 /* Test */
 .task {
@@ -50,7 +51,9 @@
 .task-text {
   display: inline;
 }
-.missed, .missed-select, .missed__feedback {
+.missed,
+.missed-select,
+.missed__feedback {
   width: fit-content;
   display: inline;
 }
