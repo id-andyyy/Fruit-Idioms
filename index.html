@@ -15,8 +15,8 @@
 
 <body>
   <script type="text/x-handlebars-template" id="contentTemplate">
-      <li class="theory-content-body-list-one list-group-item list-group-item-{{color}} d-flex justify-content-between align-items-center">
-         <a class="theory-content-body-list-one__link" href="#{{id}}">{{title}}</a>
+      <li class="content-item content-item__{{color}} list-group-item d-flex justify-content-between align-items-center">
+         <a class="content-item__link" href="#{{id}}">{{title}}</a>
       </li>
    </script>
   <script type="text/x-handlebars-template" id="articleTemplate">
@@ -56,9 +56,9 @@
                   </h6>
                   <div id="collapse{{id}}" class="accordion-collapse collapse"
                      aria-labelledby="heading{{id}}" data-bs-parent="#origin{{id}}">
-                     <div class="accordion-body">
+                     <div class="accordion-body accordion-body__padding">
                         {{#each origin}}
-                        <p class="accordion-body__p">
+                        <p>
                            {{this}}
                         </p>
                         {{/each}}
@@ -94,7 +94,7 @@
                 aria-label="Close" id="theoryContentHeaderBtn"></button>
             </div>
             <div class="theory-content-body" id="theoryContentBody">
-              <ul class="theory-content-body-list list-group" id="theoryContentBodyList">
+              <ul class="theory-content-body-list content list-group" id="theoryContentBodyList">
               </ul>
             </div>
           </div>
