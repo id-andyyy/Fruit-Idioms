@@ -30,6 +30,9 @@
 .examples-list-item-text__rus {
   color: #a6a6a6
 }
+.accordion-body__p {
+  margin: 0;
+}
 /* Test */
 .task {
   margin: 0 0 10px;

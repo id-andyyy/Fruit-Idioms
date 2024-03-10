@@ -37,9 +37,10 @@ function addArticles() {
       let articleTemplate = Handlebars.compile(articleSource);
       let theoryArticlesSummary = document.querySelector("#theoryArticlesSummary");
 
+      let articleId = 1;
+
       articlesData.forEach((articleData) => {
-        let titleString = articleData.title.replace(/\b\w/g, (c) => c.toUpperCase()).split(" ").join("");
-        articleData.id = titleString;
+        articleData.id = `article${articleId++}`
 
         theoryContentBodyList.innerHTML += contentTemplate(articleData);
         theoryArticlesSummary.innerHTML += articleTemplate(articleData);
