@@ -24,7 +24,7 @@ function changeContentLocation() {
 }
 
 function addArticles() {
-  fetch("..\\data\\articles.json")
+  fetch("./data/articles.json")
     .then(response => response.json())
     .then(data => {
       let articlesData = data;
