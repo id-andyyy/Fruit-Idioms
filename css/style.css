@@ -48,6 +48,27 @@
 .examples-list-item-text__rus {
   color: #a6a6a6
 }
+.accordion-button:focus {
+  box-shadow: none;
+}
+.accordion-button__primary {
+  --bs-accordion-active-bg: #e4f3ef;
+}
+.accordion-button__secondary {
+  --bs-accordion-active-bg: #fdeaeb;
+}
+.accordion-button__info {
+  --bs-accordion-active-bg: #e2f3f7;
+}
+.accordion-button__warning {
+  --bs-accordion-active-bg: #fff5e1;
+}
+.accordion-button__success {
+  --bs-accordion-active-bg: #ddf5eb;
+}
+.accordion-button__danger {
+  --bs-accordion-active-bg: #ffe4dc;
+}
 .accordion-body__padding {
   margin-bottom: -14px;
 }
