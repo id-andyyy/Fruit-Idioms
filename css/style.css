@@ -1,9 +1,33 @@
+/* HEADER */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
 /* THEORY */
 .theory {
-  margin: 10px 0;
+  padding: 10px 0;
 }
 /* Content */
-.theory-content-body-list-one__link {
+.content-item__primary {
+  border-color: #78c2ad;
+}
+.content-item__secondary {
+  border-color: #f3969a;
+}
+.content-item__info {
+  border-color: #6cc3d5;
+}
+.content-item__warning {
+  border-color: #ffce67;
+}
+.content-item__success {
+  border-color: #56cc9d;
+}
+.content-item__danger {
+  border-color: #ff7851;
+}
+.content-item__link {
   color: unset;
   text-decoration: none;
 }
@@ -30,6 +54,30 @@
 }
 .examples-list-item-text__rus {
   color: #a6a6a6;
+}
+.accordion-button:focus {
+  box-shadow: none;
+}
+.accordion-button__primary {
+  --bs-accordion-active-bg: #e4f3ef;
+}
+.accordion-button__secondary {
+  --bs-accordion-active-bg: #fdeaeb;
+}
+.accordion-button__info {
+  --bs-accordion-active-bg: #e2f3f7;
+}
+.accordion-button__warning {
+  --bs-accordion-active-bg: #fff5e1;
+}
+.accordion-button__success {
+  --bs-accordion-active-bg: #ddf5eb;
+}
+.accordion-button__danger {
+  --bs-accordion-active-bg: #ffe4dc;
+}
+.accordion-body__padding {
+  margin-bottom: -14px;
 }
 /* Test */
 .task {

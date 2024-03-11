@@ -10,7 +10,7 @@ function changeContentLocation() {
     theoryContentNode.classList.toggle("offcanvas");
     theoryContentNode.classList.toggle("offcanvas-end");
     theoryContentNode.setAttribute("tabindex", "-1");
-    theoryContentNode.setAttribute("aria-labelledby", "theoryContent");
+    theoryContentNode.setAttribute("aria-labelledby", "theoryContentHeaderTitle");
 
     theoryContentHeaderNode.classList.toggle("offcanvas-header");
 
@@ -24,7 +24,7 @@ function changeContentLocation() {
 }
 
 function addArticles() {
-  fetch("..\\data\\articles.json")
+  fetch("./data/articles.json")
     .then(response => response.json())
     .then(data => {
       let articlesData = data;
@@ -37,9 +37,10 @@ function addArticles() {
       let articleTemplate = Handlebars.compile(articleSource);
       let theoryArticlesSummary = document.querySelector("#theoryArticlesSummary");
 
+      let articleId = 1;
+
       articlesData.forEach((articleData) => {
-        let titleString = articleData.title.replace(/\b\w/g, (c) => c.toUpperCase()).split(" ").join("");
-        articleData.id = titleString;
+        articleData.id = `article${articleId++}`
 
         theoryContentBodyList.innerHTML += contentTemplate(articleData);
         theoryArticlesSummary.innerHTML += articleTemplate(articleData);
