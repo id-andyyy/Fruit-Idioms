@@ -1,6 +1,12 @@
+/* HEADER */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
 /* THEORY */
 .theory {
-  margin: 10px 0;
+  padding: 10px 0;
 }
 /* Content */
 .content-item__primary {

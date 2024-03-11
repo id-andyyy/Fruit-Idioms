@@ -10,7 +10,7 @@ function changeContentLocation() {
     theoryContentNode.classList.toggle("offcanvas");
     theoryContentNode.classList.toggle("offcanvas-end");
     theoryContentNode.setAttribute("tabindex", "-1");
-    theoryContentNode.setAttribute("aria-labelledby", "theoryContent");
+    theoryContentNode.setAttribute("aria-labelledby", "theoryContentHeaderTitle");
 
     theoryContentHeaderNode.classList.toggle("offcanvas-header");
 
