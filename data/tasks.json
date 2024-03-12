@@ -1,0 +1,46 @@
+[
+  {
+    "type": "choose",
+    "question": "The apple never falls far from the tree",
+    "answers": [
+      {
+        "answer": "Всё проще, чем кажется",
+        "accuracy": "w"
+      },
+      {
+        "answer": "Яблоко от яблони недалеко падает",
+        "accuracy": "c"
+      },
+      {
+        "answer": "Краткость сестра таланта",
+        "accuracy": "w"
+      },
+      {
+        "answer": "Яблоку негде упасть",
+        "accuracy": "w"
+      }
+    ]
+  },
+  {
+    "type": "choose",
+    "question": "The apple never falls far from the tree",
+    "answers": [
+      {
+        "answer": "Всё проще, чем кажется",
+        "accuracy": "w"
+      },
+      {
+        "answer": "Яблоко от яблони недалеко падает",
+        "accuracy": "c"
+      },
+      {
+        "answer": "Краткость сестра таланта",
+        "accuracy": "w"
+      },
+      {
+        "answer": "Яблоку негде упасть",
+        "accuracy": "w"
+      }
+    ]
+  }
+]

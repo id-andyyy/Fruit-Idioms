@@ -68,6 +68,31 @@
          </div>
       </article>
    </script>
+  <script type="text/x-handlebars-template" id="taskChooseTemplate">
+    {{#with this as | task |}}
+    <div class="tasks-choose task">
+      <h5 class="task-heading">Task {{id}}</h5>
+      <p class="task-description">Choose a translation of the idiom into Russian</p>
+      <fieldset class="task-item form-group row" id="group-{{id}}">
+        <div class="task-item-question col-12 col-md-6">
+          {{question}}
+        </div>
+        <div class="task-item-answer choose col-12 col-md-6">
+          {{#each answers}}
+          <div class="form-check">
+            {{#with this}}
+            <input class="form-check-input" type="radio" name="ch-{{task.id}}" id="ch-{{task.id}}-{{@index}}" value="ch-{{task.id}}-{{@index}}-{{accuracy}}">
+            <label class="form-check-label" for="ch-{{task.id}}-{{@index}}">
+              {{answer}}
+            </label>
+            {{/with}}
+          </div>
+          {{/each}}
+        </div>
+      </fieldset>
+    </div>
+    {{/with}}
+  </script>
   <header class="header">
     <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
       <div class="container">
@@ -111,41 +136,6 @@
                 </div>
               </div>
               <form action="/apply/" method="POST" id="tasks">
-                <div class="tasks-choose task">
-                  <h5 class="task-heading">Task 1</h5>
-                  <p class="task-description">Choose a translation of the idiom into Russian</p>
-                  <fieldset class="task-one form-group row" id="group-1-1">
-                    <div class="task-one-question col-12 col-md-6">
-                      The apple never falls far from the tree
-                    </div>
-                    <div class="task-one-answer choose col-12 col-md-6">
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="ra-1-1" id="ra-1-1-1" value="ra-1-1-1-w">
-                        <label class="form-check-label" for="ra-1-1-1">
-                          Всё проще, чем кажется
-                        </label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="ra-1-1" id="ra-1-1-2" value="ra-1-1-2-c">
-                        <label class="form-check-label" for="ra-1-1-2">
-                          Яблоко от яблони недалеко падает
-                        </label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="ra-1-1" id="ra-1-1-3" value="ra-1-1-3-w">
-                        <label class="form-check-label" for="ra-1-1-3">
-                          Краткость сестра таланта
-                        </label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="ra-1-1" id="ra-1-1-4" value="ra-1-1-4-w">
-                        <label class="form-check-label" for="ra-1-1-4">
-                          Яблоку негде упасть
-                        </label>
-                      </div>
-                    </div>
-                  </fieldset>
-                </div>
                 <div class="tasks-connect task">
                   <h5 class="task-heading">Task 2</h5>
                   <p class="task-description">Connect the beginning and the end of the idioms</p>

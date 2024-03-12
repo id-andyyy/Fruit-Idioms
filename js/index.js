@@ -40,10 +40,31 @@ function addArticles() {
       let articleId = 1;
 
       articlesData.forEach((articleData) => {
-        articleData.id = `article${articleId++}`
+        articleData.id = `article${articleId++}`;
 
         theoryContentBodyList.innerHTML += contentTemplate(articleData);
         theoryArticlesSummary.innerHTML += articleTemplate(articleData);
+      });
+    });
+}
+
+function addTasks() {
+  fetch("./data/tasks.json")
+    .then(response => response.json())
+    .then(data => {
+      let tasksData = data;
+
+      let tasks = document.querySelector("#tasks");
+
+      let taskChooseSource = document.querySelector("#taskChooseTemplate").innerHTML;
+      let taskChooseTemplate = Handlebars.compile(taskChooseSource);
+
+      let taskId = 1;
+
+      tasksData.forEach((taskData) => {
+        taskData.id = String(taskId++);
+
+        tasks.innerHTML += taskChooseTemplate(taskData);
       });
     });
 }
@@ -55,32 +76,32 @@ function serializeForm(formNode) {
 function handleFormSubmit(event) {
   event.preventDefault();
 
-  let data = Array.from(serializeForm(tasksForm).entries());
+  let formData = Array.from(serializeForm(tasksForm).entries());
 
-  let maxPoints = data.length, points = 0;
-  for (let task in data) {
-    let taskNum = data[task][0].substring(3, 6);
-    let taskType = data[task][0].substring(0, 2);
+  let maxPoints = formData.length, points = 0;
+  formData.forEach((task) => {
+    let taskNum = task[0].substring(3, 6);
+    let taskType = task[0].substring(0, 2);
 
     let groupNode = document.querySelector(`#group-${taskNum}`);
     let feedbackNode = document.querySelector(`#feedback-${taskNum}`);
 
-    if (data[task][1] == 0) {
-      // pass
+    if (task[1] == 0) {
+      //pass
     } else {
-      if (taskType == "ra") {
-        let inputNode = document.querySelector(`#${data[task][1].substring(0, 8)}`);
+      if (taskType == "ch") {
+        let inputNode = document.querySelector(`#${task[1].substring(0, 6)}`);
 
         groupNode.classList.remove("has-danger", "has-success");
         inputNode.classList.remove("is-invalid", "is-valid");
 
-        if (data[task][1][9] == "c") {
+        if (task[1].slice(-1) == "c") {
           points++;
 
           groupNode.classList.add("has-success");
           inputNode.classList.add("is-valid");
         } else {
-          let chooseInputNode = document.querySelectorAll('#group-1-1 input');
+          let chooseInputNode = document.querySelectorAll(`#group-${taskNum} input`);
           chooseInputNode.forEach((element) => {
             if (element.value.slice(-1) == "c") {
               element.classList.add("is-invalid");
@@ -88,12 +109,12 @@ function handleFormSubmit(event) {
           });
         }
       } else {
-        let inputNode = document.querySelector(`#${data[task][0]}`);
+        let inputNode = document.querySelector(`#${task[0]}`);
         groupNode.classList.remove("has-danger", "has-success");
         inputNode.classList.remove("is-invalid", "is-valid");
 
 
-        if (data[task][1].toLowerCase().replace(/\./g, "").replace(/\s/g, "") == feedbackNode.textContent.toLowerCase().replace(/\s/g, "")) {
+        if (task[1].toLowerCase().replace(/\./g, "").replace(/\s/g, "") == feedbackNode.textContent.toLowerCase().replace(/\s/g, "")) {
           points++;
 
           groupNode.classList.add("has-success");
@@ -110,7 +131,7 @@ function handleFormSubmit(event) {
         }
       }
     }
-  }
+  });
 
   let result = Math.round((points / maxPoints) * 100);
   let tasksResultNode = document.querySelector("#tasksResult");
@@ -155,10 +176,9 @@ function getHelp() {
 }
 
 changeContentLocation();
-
 addArticles();
+addTasks();
+getHelp();
 
 const tasksForm = document.querySelector("#tasks");
 tasksForm.addEventListener("submit", handleFormSubmit);
-
-getHelp();
