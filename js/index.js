@@ -59,12 +59,19 @@ function addTasks() {
       let taskChooseSource = document.querySelector("#taskChooseTemplate").innerHTML;
       let taskChooseTemplate = Handlebars.compile(taskChooseSource);
 
+      let taskTextSource = document.querySelector("#taskTextTemplate").innerHTML;
+      let taskTextTemplate = Handlebars.compile(taskTextSource);
+
       let taskId = 1;
 
       tasksData.forEach((taskData) => {
         taskData.id = String(taskId++);
 
-        tasks.innerHTML += taskChooseTemplate(taskData);
+        if (taskData.type == "choose") {
+          tasks.innerHTML += taskChooseTemplate(taskData);
+        } else if (taskData.type == "text") {
+          tasks.innerHTML += taskTextTemplate(taskData);
+        }
       });
     });
 }
@@ -84,7 +91,6 @@ function handleFormSubmit(event) {
     let taskType = task[0].substring(0, 2);
 
     let groupNode = document.querySelector(`#group-${taskNum}`);
-    let feedbackNode = document.querySelector(`#feedback-${taskNum}`);
 
     if (task[1] == 0) {
       //pass
@@ -110,9 +116,10 @@ function handleFormSubmit(event) {
         }
       } else {
         let inputNode = document.querySelector(`#${task[0]}`);
+        let feedbackNode = document.querySelector(`#feedback-${taskNum}`);
+
         groupNode.classList.remove("has-danger", "has-success");
         inputNode.classList.remove("is-invalid", "is-valid");
-
 
         if (task[1].toLowerCase().replace(/\./g, "").replace(/\s/g, "") == feedbackNode.textContent.toLowerCase().replace(/\s/g, "")) {
           points++;

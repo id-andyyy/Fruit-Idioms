@@ -2,44 +2,54 @@
   {
     "type": "choose",
     "question": "The apple never falls far from the tree",
-    "answers": [
+    "variants": [
       {
-        "answer": "Всё проще, чем кажется",
+        "text": "Всё проще, чем кажется",
         "accuracy": "w"
       },
       {
-        "answer": "Яблоко от яблони недалеко падает",
+        "text": "Яблоко от яблони недалеко падает",
         "accuracy": "c"
       },
       {
-        "answer": "Краткость сестра таланта",
+        "text": "Краткость сестра таланта",
         "accuracy": "w"
       },
       {
-        "answer": "Яблоку негде упасть",
+        "text": "Яблоку негде упасть",
         "accuracy": "w"
       }
     ]
   },
   {
-    "type": "choose",
-    "question": "The apple never falls far from the tree",
-    "answers": [
+    "type": "text",
+    "question": [
       {
-        "answer": "Всё проще, чем кажется",
-        "accuracy": "w"
+        "text": "Lorem ipsum dolor sit amet"
       },
       {
-        "answer": "Яблоко от яблони недалеко падает",
-        "accuracy": "c"
+        "variants": [
+          "mollitia",
+          "saepe",
+          "consectetur",
+          "maiores"
+        ],
+        "answer": "consectetur"
       },
       {
-        "answer": "Краткость сестра таланта",
-        "accuracy": "w"
+        "text": "adipisicing elit. Eum pariatur laudantium nisi sequi"
       },
       {
-        "answer": "Яблоку негде упасть",
-        "accuracy": "w"
+        "variants": [
+          "eligendi",
+          "placeat",
+          "nostrum",
+          "elit"
+        ],
+        "answer": "eligendi"
+      },
+      {
+        "text": "est velit consequuntur aliquam ducimus. Dolore harum nostrum iure saepe maiores, est atque mollitia placeat numquam."
       }
     ]
   }

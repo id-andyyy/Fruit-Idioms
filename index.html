@@ -78,18 +78,47 @@
           {{question}}
         </div>
         <div class="task-item-answer choose col-12 col-md-6">
-          {{#each answers}}
+          {{#each variants}}
           <div class="form-check">
             {{#with this}}
             <input class="form-check-input" type="radio" name="ch-{{task.id}}" id="ch-{{task.id}}-{{@index}}" value="ch-{{task.id}}-{{@index}}-{{accuracy}}">
             <label class="form-check-label" for="ch-{{task.id}}-{{@index}}">
-              {{answer}}
+              {{text}}
             </label>
             {{/with}}
           </div>
           {{/each}}
         </div>
       </fieldset>
+    </div>
+    {{/with}}
+  </script>
+  <script type="text/x-handlebars-template" id="taskTextTemplate">
+    {{#with this as | task |}}
+    <div class="tasks-text task">
+      <h5 class="task-heading">Task {{id}}</h5>
+      <p class="task-description">Insert the missing idioms into the text</p>
+      {{#each question}}
+      {{#with this}}
+      {{#if text}}
+      <div class="task-text">
+        {{text}}
+      </div>
+      {{/if}}
+      {{#if variants}}
+      <div class="task-missed missed form-group" id="group-{{task.id}}-{{@index}}">
+        <select class="missed-select form-select" name="te-{{task.id}}-{{@index}}" id="te-{{task.id}}-{{@index}}">
+          <option label=" " selected></option>
+          {{#each variants}}
+          <option>{{this}}</option>
+          {{/each}}
+        </select>
+        <div class="missed__feedback d-none" id="feedback-{{task.id}}-{{@index}}">{{answer}}
+        </div>
+      </div>
+      {{/if}}
+      {{/with}}
+      {{/each}}
     </div>
     {{/with}}
   </script>
@@ -136,7 +165,7 @@
                 </div>
               </div>
               <form action="/apply/" method="POST" id="tasks">
-                <div class="tasks-connect task">
+                <!-- <div class="tasks-connect task">
                   <h5 class="task-heading">Task 2</h5>
                   <p class="task-description">Connect the beginning and the end of the idioms</p>
                   <div class="task-question row">
@@ -196,41 +225,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="tasks-text task">
-                  <h5 class="task-heading">Task 3</h5>
-                  <p class="task-description">Insert the missing idioms into the text</p>
-                  <div class="task-text">
-                    Lorem ipsum dolor sit amet
-                  </div>
-                  <div class="task-missed missed form-group" id="group-3-1">
-                    <select class="missed-select form-select" name="se-3-1" id="se-3-1">
-                      <option label=" " selected></option>
-                      <option>mollitia</option>
-                      <option>saepe</option>
-                      <option>consectetur</option>
-                      <option>maiores</option>
-                    </select>
-                    <div class="missed__feedback d-none" id="feedback-3-1">consectetur
-                    </div>
-                  </div>
-                  <div class="task-text">
-                    adipisicing elit. Eum pariatur laudantium nisi sequi
-                  </div>
-                  <div class="task-missed missed form-group" id="group-3-2">
-                    <select class="missed-select form-select" name="se-3-2" id="se-3-2">
-                      <option label=" " selected></option>
-                      <option>eligendi</option>
-                      <option>placeat</option>
-                      <option>nostrum</option>
-                      <option>elit</option>
-                    </select>
-                    <div class="missed__feedback d-none" id="feedback-3-2">eligendi</div>
-                  </div>
-                  <div class="task-text">
-                    est velit consequuntur aliquam ducimus. Dolore harum nostrum iure saepe
-                    maiores, est atque mollitia placeat numquam.
-                  </div>
-                </div>
+
                 <div class="tasks-translate task">
                   <h5 class="task-heading">Task 4</h5>
                   <p class="task-description">Write a fruit idiom with the meaning</p>
@@ -258,7 +253,7 @@
                       <button type="button" class="task-one-help__btn btn btn-info" id="help-4-2">Help</button>
                     </div>
                   </div>
-                </div>
+                </div> -->
                 <button type="submit" class="tasks-btn btn btn-primary">Done!</button>
               </form>
             </section>
