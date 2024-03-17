@@ -62,6 +62,9 @@ function addTasks() {
       let taskTextSource = document.querySelector("#taskTextTemplate").innerHTML;
       let taskTextTemplate = Handlebars.compile(taskTextSource);
 
+      let taskTranslateSource = document.querySelector("#taskTranslateTemplate").innerHTML;
+      let taskTranslateTemplate = Handlebars.compile(taskTranslateSource);
+
       let taskId = 1;
 
       tasksData.forEach((taskData) => {
@@ -71,9 +74,31 @@ function addTasks() {
           tasks.innerHTML += taskChooseTemplate(taskData);
         } else if (taskData.type == "text") {
           tasks.innerHTML += taskTextTemplate(taskData);
+        } else if (taskData.type == "translate") {
+          tasks.innerHTML += taskTranslateTemplate(taskData);
+
+          let taskHelpBtnNode = document.querySelectorAll(".task-item-help__btn");
+          taskHelpBtnNode.forEach((element) => {
+            element.addEventListener("click", showHelpButton, false);
+          });
         }
       });
     });
+}
+
+function showHelpButton(event) {
+  let helpBtnId = this.id.substring(4);
+  let groupNode = document.querySelector(`#group${helpBtnId}`);
+  let inputNode = document.querySelector(`#te${helpBtnId}`);
+  let feedbackNode = document.querySelector(`#feedback${helpBtnId}`);
+
+  groupNode.classList.remove("has-success");
+  inputNode.classList.remove("is-valid");
+
+  groupNode.classList.add("has-danger");
+  inputNode.classList.add("is-invalid");
+  feedbackNode.classList.remove("d-none");
+  feedbackNode.classList.add("invalid-feedback");
 }
 
 function serializeForm(formNode) {
@@ -96,7 +121,7 @@ function handleFormSubmit(event) {
       //pass
     } else {
       if (taskType == "ch") {
-        let inputNode = document.querySelector(`#${task[1].substring(0, 6)}`);
+        let inputNode = document.querySelector(`#${task[1].substring(0, 8)}`);
 
         groupNode.classList.remove("has-danger", "has-success");
         inputNode.classList.remove("is-invalid", "is-valid");
@@ -160,32 +185,9 @@ function handleFormSubmit(event) {
   }
 }
 
-function getHelp() {
-  function showHelpButton(event) {
-    let helpBtnId = this.id.substring(4);
-    let groupNode = document.querySelector(`#group${helpBtnId}`);
-    let inputNode = document.querySelector(`#te${helpBtnId}`);
-    let feedbackNode = document.querySelector(`#feedback${helpBtnId}`);
-
-    groupNode.classList.remove("has-success");
-    inputNode.classList.remove("is-valid");
-
-    groupNode.classList.add("has-danger");
-    inputNode.classList.add("is-invalid");
-    feedbackNode.classList.remove("d-none");
-    feedbackNode.classList.add("invalid-feedback");
-  }
-
-  let taskHelpBtnNode = document.querySelectorAll(".task-help__btn");
-  taskHelpBtnNode.forEach((element) => {
-    element.addEventListener("click", showHelpButton, false);
-  });
-}
-
 changeContentLocation();
 addArticles();
 addTasks();
-getHelp();
 
 const tasksForm = document.querySelector("#tasks");
 tasksForm.addEventListener("submit", handleFormSubmit);

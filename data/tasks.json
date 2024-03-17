@@ -1,29 +1,33 @@
 [
   {
     "type": "choose",
-    "question": "The apple never falls far from the tree",
-    "variants": [
+    "problems": [
       {
-        "text": "Всё проще, чем кажется",
-        "accuracy": "w"
-      },
-      {
-        "text": "Яблоко от яблони недалеко падает",
-        "accuracy": "c"
-      },
-      {
-        "text": "Краткость сестра таланта",
-        "accuracy": "w"
-      },
-      {
-        "text": "Яблоку негде упасть",
-        "accuracy": "w"
+        "question": "The apple never falls far from the tree",
+        "variants": [
+          {
+            "text": "Всё проще, чем кажется",
+            "accuracy": "w"
+          },
+          {
+            "text": "Яблоко от яблони недалеко падает",
+            "accuracy": "c"
+          },
+          {
+            "text": "Краткость сестра таланта",
+            "accuracy": "w"
+          },
+          {
+            "text": "Яблоку негде упасть",
+            "accuracy": "w"
+          }
+        ]
       }
     ]
   },
   {
     "type": "text",
-    "question": [
+    "problems": [
       {
         "text": "Lorem ipsum dolor sit amet"
       },
@@ -50,6 +54,19 @@
       },
       {
         "text": "est velit consequuntur aliquam ducimus. Dolore harum nostrum iure saepe maiores, est atque mollitia placeat numquam."
+      }
+    ]
+  },
+  {
+    "type": "translate",
+    "problems": [
+      {
+        "question": "Desired or loved one",
+        "answer": "The apple of my eye"
+      },
+      {
+        "question": "To compare incomparable things",
+        "answer": "Apples and oranges"
       }
     ]
   }
