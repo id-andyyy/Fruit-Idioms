@@ -54,7 +54,7 @@ function addTasks() {
     .then(data => {
       let tasksData = data;
 
-      let tasks = document.querySelector("#tasks");
+      let tasks = document.querySelector("#tasksWrapper");
 
       let taskChooseSource = document.querySelector("#taskChooseTemplate").innerHTML;
       let taskChooseTemplate = Handlebars.compile(taskChooseSource);
@@ -189,5 +189,5 @@ changeContentLocation();
 addArticles();
 addTasks();
 
-const tasksForm = document.querySelector("#tasks");
+const tasksForm = document.querySelector("#tasksForm");
 tasksForm.addEventListener("submit", handleFormSubmit);

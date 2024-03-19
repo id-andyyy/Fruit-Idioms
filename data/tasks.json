@@ -28,33 +28,40 @@
   {
     "type": "text",
     "problems": [
-      {
-        "text": "Lorem ipsum dolor sit amet"
-      },
-      {
-        "variants": [
-          "mollitia",
-          "saepe",
-          "consectetur",
-          "maiores"
-        ],
-        "answer": "consectetur"
-      },
-      {
-        "text": "adipisicing elit. Eum pariatur laudantium nisi sequi"
-      },
-      {
-        "variants": [
-          "eligendi",
-          "placeat",
-          "nostrum",
-          "elit"
-        ],
-        "answer": "eligendi"
-      },
-      {
-        "text": "est velit consequuntur aliquam ducimus. Dolore harum nostrum iure saepe maiores, est atque mollitia placeat numquam."
-      }
+      [
+        {
+          "text": "Lorem ipsum dolor sit amet"
+        },
+        {
+          "variants": [
+            "mollitia",
+            "saepe",
+            "consectetur",
+            "maiores"
+          ],
+          "answer": "consectetur"
+        },
+        {
+          "text": "adipisicing elit."
+        }
+      ],
+      [
+        {
+          "text": "Eum pariatur laudantium nisi sequi"
+        },
+        {
+          "variants": [
+            "eligendi",
+            "placeat",
+            "nostrum",
+            "elit"
+          ],
+          "answer": "eligendi"
+        },
+        {
+          "text": "est velit consequuntur aliquam ducimus. Dolore harum nostrum iure saepe maiores, est atque mollitia placeat numquam."
+        }
+      ]
     ]
   },
   {

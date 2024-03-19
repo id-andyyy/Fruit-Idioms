@@ -31,14 +31,12 @@
                   {{#each examples}}
                   <li class="examples-list-item list-group-item">
                      <div class="examples-list-item-text">
-                        {{#with this}}
                         <div class="examples-list-item-text__eng">
                            {{eng}}
                         </div>
                         <div class="examples-list-item-text__rus">
                            {{rus}}
                         </div>
-                        {{/with}}
                      </div>
                   </li>
                   {{/each}}
@@ -79,13 +77,11 @@
         </div>
         <div class="task-item-answer choose col-12 col-md-6">
           {{#each variants}}
-          {{#with this}}
           <div class="form-check">
             <input class="form-check-input" type="radio" name="ch-{{../../id}}-{{@../index}}" id="ch-{{../../id}}-{{@../index}}-{{@index}}" value="ch-{{../../id}}-{{@../index}}-{{@index}}-{{accuracy}}">
             <label class="form-check-label" for="ch-{{../../id}}-{{@../index}}-{{@index}}">
               {{text}}
             </label>
-            {{/with}}
           </div>
           {{/each}}
         </div>
@@ -98,25 +94,26 @@
       <h5 class="task-heading">Task {{id}}</h5>
       <p class="task-description">Insert the missing idioms into the text</p>
       {{#each problems}}
-      {{#with this}}
-      {{#if text}}
-      <div class="task-text">
-        {{text}}
-      </div>
-      {{/if}}
-      {{#if variants}}
-      <div class="task-missed missed form-group" id="group-{{../id}}-{{@index}}">
-        <select class="missed-select form-select" name="te-{{../id}}-{{@index}}" id="te-{{../id}}-{{@index}}">
-          <option label=" " selected></option>
-          {{#each variants}}
-          <option>{{this}}</option>
-          {{/each}}
-        </select>
-        <div class="missed__feedback d-none" id="feedback-{{../id}}-{{@index}}">{{answer}}
+      <div class="task-item">
+        {{#each this}}
+        {{#if text}}
+        <div class="task-p">
+          {{text}}
         </div>
+        {{/if}}
+        {{#if variants}}
+        <div class="task-missed missed form-group" id="group-{{../../id}}-{{@../index}}">
+          <select class="missed-select form-select" name="te-{{../../id}}-{{@../index}}" id="te-{{../../id}}-{{@../index}}">
+            <option label=" " selected></option>
+            {{#each variants}}
+            <option>{{this}}</option>
+            {{/each}}
+          </select>
+          <div class="missed__feedback d-none" id="feedback-{{../../id}}-{{@../index}}">{{answer}}</div>
+        </div>
+        {{/if}}
+        {{/each}}
       </div>
-      {{/if}}
-      {{/with}}
       {{/each}}
     </div>
   </script>
@@ -125,7 +122,6 @@
       <h5 class="task-heading">Task {{id}}</h5>
       <p class="task-description">Write a fruit idiom with the meaning</p>
       {{#each problems}}
-      {{#with this}}
       <div class="task-item form-group row" id="group-{{../id}}-{{@index}}">
         <div class="task-item-question col-12 col-md-4">
           <label class="form-label" for="te-{{../id}}-{{@index}}">{{question}}</label>
@@ -138,7 +134,6 @@
           <button type="button" class="task-item-help__btn btn btn-info" id="help-{{../id}}-{{@index}}">Help</button>
         </div>
       </div>
-      {{/with}}
       {{/each}}
     </div>
   </script>
@@ -184,7 +179,10 @@
                     aria-valuemin="0" aria-valuemax="100" id="tasksResultProgress"></div>
                 </div>
               </div>
-              <form action="/apply/" method="POST" id="tasks">
+              <form action="/apply/" method="POST" id="tasksForm">
+                <div class="tasks-wrapper" id="tasksWrapper">
+
+                </div>
                 <!-- <div class="tasks-connect task">
                   <h5 class="task-heading">Task 2</h5>
                   <p class="task-description">Connect the beginning and the end of the idioms</p>
