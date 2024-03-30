@@ -59,6 +59,9 @@ function addTasks() {
       let taskChooseSource = document.querySelector("#taskChooseTemplate").innerHTML;
       let taskChooseTemplate = Handlebars.compile(taskChooseSource);
 
+      let taskConnectSource = document.querySelector("#taskConnectTemplate").innerHTML;
+      let taskConnectTemplate = Handlebars.compile(taskConnectSource);
+
       let taskTextSource = document.querySelector("#taskTextTemplate").innerHTML;
       let taskTextTemplate = Handlebars.compile(taskTextSource);
 
@@ -72,6 +75,8 @@ function addTasks() {
 
         if (taskData.type == "choose") {
           tasks.innerHTML += taskChooseTemplate(taskData);
+        } else if (taskData.type == "connect") {
+          tasks.innerHTML += taskConnectTemplate(taskData);
         } else if (taskData.type == "text") {
           tasks.innerHTML += taskTextTemplate(taskData);
         } else if (taskData.type == "translate") {

@@ -89,6 +89,28 @@
       {{/each}}
     </div>
   </script>
+  <script type="text/x-handlebars-template" id="taskConnectTemplate">
+    <div class="tasks-translate task">
+      <h5 class="task-heading">Task {{id}}</h5>
+      <p class="task-description">Connect the beginning and the end of the idioms</p>
+      {{#each problems}}
+      <div class="task-item row">
+        <div class="task-item-part form-group col-8 row" id="group-{{../id}}-{{@index}}">
+          <div class="task-item-part-label col-8 col-sm-4">
+            <label class="form-label" for="co-{{../id}}-{{@index}}">{{id}}. {{part1}}</label>
+          </div>
+          <div class="task-item-part-input missed col-4">
+            <input type="text" class="task-item-part-input__input missed-select form-control" name="co-{{../id}}-{{@index}}" id="co-{{../id}}-{{@index}}">
+            <div class="missed__feedback d-none" id="feedback-{{../id}}-{{@index}}">{{answer}}</div>
+          </div>
+        </div>
+        <div class="task-item-part col-4">
+          {{letter}}. {{part2}}
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </script>
   <script type="text/x-handlebars-template" id="taskTextTemplate">
     <div class="tasks-text task">
       <h5 class="task-heading">Task {{id}}</h5>
@@ -183,68 +205,6 @@
                 <div class="tasks-wrapper" id="tasksWrapper">
 
                 </div>
-                <!-- <div class="tasks-connect task">
-                  <h5 class="task-heading">Task 2</h5>
-                  <p class="task-description">Connect the beginning and the end of the idioms</p>
-                  <div class="task-question row">
-                    <div class="task-question-part col-6">
-                      <ol type="A">
-                        <li>To be in</li>
-                        <li>To polish</li>
-                        <li>To be full of</li>
-                        <li>Life is</li>
-                      </ol>
-                    </div>
-                    <div class="task-question-part col-6">
-                      <ol>
-                        <li>beans</li>
-                        <li>one's apple</li>
-                        <li>cherry condition</li>
-                        <li>a bowl of cherries</li>
-                      </ol>
-                    </div>
-                  </div>
-                  <div class="task-answer">
-                    <div class="task-answer-row form-group row" id="group-2-1">
-                      <div class="task-answer-row-cell col-6">
-                        <label class="form-label" for="te-2-1">A</label>
-                      </div>
-                      <div class="task-answer-row-cell col-6">
-                        <input type="text" class="form-control" name="te-2-1" id="te-2-1">
-                        <div class="d-none" id="feedback-2-1">3</div>
-                      </div>
-                    </div>
-                    <div class="task-answer-row form-group row" id="group-2-2">
-                      <div class="task-answer-row-cell col-6">
-                        <label class="form-label" for="te-2-2">B</label>
-                      </div>
-                      <div class="task-answer-row-cell col-6">
-                        <input type="text" class="form-control" name="te-2-2" id="te-2-2">
-                        <div class="d-none" id="feedback-2-2">2</div>
-                      </div>
-                    </div>
-                    <div class="task-answer-row form-group row" id="group-2-3">
-                      <div class="task-answer-row-cell col-6">
-                        <label class="form-label" for="te-2-3">C</label>
-                      </div>
-                      <div class="task-answer-row-cell col-6">
-                        <input type="text" class="form-control" name="te-2-3" id="te-2-3">
-                        <div class="d-none" id="feedback-2-3">1</div>
-                      </div>
-                    </div>
-                    <div class="task-answer-row form-group row" id="group-2-4">
-                      <div class="task-answer-row-cell col-6">
-                        <label class="form-label" for="te-2-4">D</label>
-                      </div>
-                      <div class="task-answer-row-cell col-6">
-                        <input type="text" class="form-control" name="te-2-4" id="te-2-4">
-                        <div class="d-none" id="feedback-2-4">4</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                 -->
                 <button type="submit" class="tasks-btn btn btn-primary">Done!</button>
               </form>
             </section>
