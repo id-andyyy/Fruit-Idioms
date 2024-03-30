@@ -31,14 +31,12 @@
                   {{#each examples}}
                   <li class="examples-list-item list-group-item">
                      <div class="examples-list-item-text">
-                        {{#with this}}
                         <div class="examples-list-item-text__eng">
                            {{eng}}
                         </div>
                         <div class="examples-list-item-text__rus">
                            {{rus}}
                         </div>
-                        {{/with}}
                      </div>
                   </li>
                   {{/each}}
@@ -68,6 +66,99 @@
          </div>
       </article>
    </script>
+  <script type="text/x-handlebars-template" id="taskChooseTemplate">
+    <div class="tasks-choose task">
+      <h5 class="task-heading">Task {{id}}</h5>
+      <p class="task-description">Choose a translation of the idiom into Russian</p>
+      {{#each problems}}
+      <fieldset class="task-item form-group row" id="group-{{../id}}-{{@index}}">
+        <div class="task-item-question col-12 col-md-6">
+          {{question}}
+        </div>
+        <div class="task-item-answer choose col-12 col-md-6">
+          {{#each variants}}
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="ch-{{../../id}}-{{@../index}}" id="ch-{{../../id}}-{{@../index}}-{{@index}}" value="ch-{{../../id}}-{{@../index}}-{{@index}}-{{accuracy}}">
+            <label class="form-check-label" for="ch-{{../../id}}-{{@../index}}-{{@index}}">
+              {{text}}
+            </label>
+          </div>
+          {{/each}}
+        </div>
+      </fieldset>
+      {{/each}}
+    </div>
+  </script>
+  <script type="text/x-handlebars-template" id="taskConnectTemplate">
+    <div class="tasks-translate task">
+      <h5 class="task-heading">Task {{id}}</h5>
+      <p class="task-description">Connect the beginning and the end of the idioms</p>
+      {{#each problems}}
+      <div class="task-item row">
+        <div class="task-item-part form-group col-8 row" id="group-{{../id}}-{{@index}}">
+          <div class="task-item-part-label col-8 col-sm-4">
+            <label class="form-label" for="co-{{../id}}-{{@index}}">{{id}}. {{part1}}</label>
+          </div>
+          <div class="task-item-part-input missed col-4">
+            <input type="text" class="task-item-part-input__input missed-select form-control" name="co-{{../id}}-{{@index}}" id="co-{{../id}}-{{@index}}">
+            <div class="missed__feedback d-none" id="feedback-{{../id}}-{{@index}}">{{answer}}</div>
+          </div>
+        </div>
+        <div class="task-item-part col-4">
+          {{letter}}. {{part2}}
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </script>
+  <script type="text/x-handlebars-template" id="taskTextTemplate">
+    <div class="tasks-text task">
+      <h5 class="task-heading">Task {{id}}</h5>
+      <p class="task-description">Insert the missing idioms into the text</p>
+      {{#each problems}}
+      <div class="task-item">
+        {{#each this}}
+        {{#if text}}
+        <div class="task-p">
+          {{text}}
+        </div>
+        {{/if}}
+        {{#if variants}}
+        <div class="task-missed missed form-group" id="group-{{../../id}}-{{@../index}}">
+          <select class="missed-select form-select" name="te-{{../../id}}-{{@../index}}" id="te-{{../../id}}-{{@../index}}">
+            <option label=" " selected></option>
+            {{#each variants}}
+            <option>{{this}}</option>
+            {{/each}}
+          </select>
+          <div class="missed__feedback d-none" id="feedback-{{../../id}}-{{@../index}}">{{answer}}</div>
+        </div>
+        {{/if}}
+        {{/each}}
+      </div>
+      {{/each}}
+    </div>
+  </script>
+  <script type="text/x-handlebars-template" id="taskTranslateTemplate">
+    <div class="tasks-translate task">
+      <h5 class="task-heading">Task {{id}}</h5>
+      <p class="task-description">Write a fruit idiom with the meaning</p>
+      {{#each problems}}
+      <div class="task-item form-group row" id="group-{{../id}}-{{@index}}">
+        <div class="task-item-question col-12 col-md-4">
+          <label class="form-label" for="te-{{../id}}-{{@index}}">{{question}}</label>
+        </div>
+        <div class="task-item-answer col-9 col-md-6">
+          <input type="text" class="form-control" name="te-{{../id}}-{{@index}}" id="te-{{../id}}-{{@index}}">
+            <div class="d-none" id="feedback-{{../id}}-{{@index}}">{{answer}}</div>
+        </div>
+        <div class="task-item-help task-help col-3 col-md-2">
+          <button type="button" class="task-item-help__btn btn btn-info" id="help-{{../id}}-{{@index}}">Help</button>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </script>
   <header class="header">
     <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
       <div class="container">
@@ -110,164 +201,9 @@
                     aria-valuemin="0" aria-valuemax="100" id="tasksResultProgress"></div>
                 </div>
               </div>
-              <form action="/apply/" method="POST" id="tasks">
-                <div class="tasks-choose task">
-                  <h5 class="task-heading">Task 1</h5>
-                  <p class="task-description">Choose a translation of the idiom into Russian</p>
-                  <fieldset class="task-one form-group row" id="group-1-1">
-                    <div class="task-one-question col-12 col-md-6">
-                      The apple never falls far from the tree
-                    </div>
-                    <div class="task-one-answer choose col-12 col-md-6">
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="ra-1-1" id="ra-1-1-1" value="ra-1-1-1-w">
-                        <label class="form-check-label" for="ra-1-1-1">
-                          Всё проще, чем кажется
-                        </label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="ra-1-1" id="ra-1-1-2" value="ra-1-1-2-c">
-                        <label class="form-check-label" for="ra-1-1-2">
-                          Яблоко от яблони недалеко падает
-                        </label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="ra-1-1" id="ra-1-1-3" value="ra-1-1-3-w">
-                        <label class="form-check-label" for="ra-1-1-3">
-                          Краткость сестра таланта
-                        </label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="ra-1-1" id="ra-1-1-4" value="ra-1-1-4-w">
-                        <label class="form-check-label" for="ra-1-1-4">
-                          Яблоку негде упасть
-                        </label>
-                      </div>
-                    </div>
-                  </fieldset>
-                </div>
-                <div class="tasks-connect task">
-                  <h5 class="task-heading">Task 2</h5>
-                  <p class="task-description">Connect the beginning and the end of the idioms</p>
-                  <div class="task-question row">
-                    <div class="task-question-part col-6">
-                      <ol type="A">
-                        <li>To be in</li>
-                        <li>To polish</li>
-                        <li>To be full of</li>
-                        <li>Life is</li>
-                      </ol>
-                    </div>
-                    <div class="task-question-part col-6">
-                      <ol>
-                        <li>beans</li>
-                        <li>one's apple</li>
-                        <li>cherry condition</li>
-                        <li>a bowl of cherries</li>
-                      </ol>
-                    </div>
-                  </div>
-                  <div class="task-answer">
-                    <div class="task-answer-row form-group row" id="group-2-1">
-                      <div class="task-answer-row-cell col-6">
-                        <label class="form-label" for="te-2-1">A</label>
-                      </div>
-                      <div class="task-answer-row-cell col-6">
-                        <input type="text" class="form-control" name="te-2-1" id="te-2-1">
-                        <div class="d-none" id="feedback-2-1">3</div>
-                      </div>
-                    </div>
-                    <div class="task-answer-row form-group row" id="group-2-2">
-                      <div class="task-answer-row-cell col-6">
-                        <label class="form-label" for="te-2-2">B</label>
-                      </div>
-                      <div class="task-answer-row-cell col-6">
-                        <input type="text" class="form-control" name="te-2-2" id="te-2-2">
-                        <div class="d-none" id="feedback-2-2">2</div>
-                      </div>
-                    </div>
-                    <div class="task-answer-row form-group row" id="group-2-3">
-                      <div class="task-answer-row-cell col-6">
-                        <label class="form-label" for="te-2-3">C</label>
-                      </div>
-                      <div class="task-answer-row-cell col-6">
-                        <input type="text" class="form-control" name="te-2-3" id="te-2-3">
-                        <div class="d-none" id="feedback-2-3">1</div>
-                      </div>
-                    </div>
-                    <div class="task-answer-row form-group row" id="group-2-4">
-                      <div class="task-answer-row-cell col-6">
-                        <label class="form-label" for="te-2-4">D</label>
-                      </div>
-                      <div class="task-answer-row-cell col-6">
-                        <input type="text" class="form-control" name="te-2-4" id="te-2-4">
-                        <div class="d-none" id="feedback-2-4">4</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="tasks-text task">
-                  <h5 class="task-heading">Task 3</h5>
-                  <p class="task-description">Insert the missing idioms into the text</p>
-                  <div class="task-text">
-                    Lorem ipsum dolor sit amet
-                  </div>
-                  <div class="task-missed missed form-group" id="group-3-1">
-                    <select class="missed-select form-select" name="se-3-1" id="se-3-1">
-                      <option label=" " selected></option>
-                      <option>mollitia</option>
-                      <option>saepe</option>
-                      <option>consectetur</option>
-                      <option>maiores</option>
-                    </select>
-                    <div class="missed__feedback d-none" id="feedback-3-1">consectetur
-                    </div>
-                  </div>
-                  <div class="task-text">
-                    adipisicing elit. Eum pariatur laudantium nisi sequi
-                  </div>
-                  <div class="task-missed missed form-group" id="group-3-2">
-                    <select class="missed-select form-select" name="se-3-2" id="se-3-2">
-                      <option label=" " selected></option>
-                      <option>eligendi</option>
-                      <option>placeat</option>
-                      <option>nostrum</option>
-                      <option>elit</option>
-                    </select>
-                    <div class="missed__feedback d-none" id="feedback-3-2">eligendi</div>
-                  </div>
-                  <div class="task-text">
-                    est velit consequuntur aliquam ducimus. Dolore harum nostrum iure saepe
-                    maiores, est atque mollitia placeat numquam.
-                  </div>
-                </div>
-                <div class="tasks-translate task">
-                  <h5 class="task-heading">Task 4</h5>
-                  <p class="task-description">Write a fruit idiom with the meaning</p>
-                  <div class="task-one form-group row" id="group-4-1">
-                    <div class="task-one-question col-12 col-md-4">
-                      <label class="form-label" for="te-4-1">Desired or loved one</label>
-                    </div>
-                    <div class="task-one-answer col-9 col-md-6">
-                      <input type="text" class="form-control" name="te-4-1" id="te-4-1">
-                      <div class="d-none" id="feedback-4-1">The apple of my eye</div>
-                    </div>
-                    <div class="task-one-help task-help col-3 col-md-2">
-                      <button type="button" class="task-one-help__btn btn btn-info" id="help-4-1">Help</button>
-                    </div>
-                  </div>
-                  <div class="task-one form-group row" id="group-4-2">
-                    <div class="task-one-question col-12 col-md-4">
-                      <label class="form-label" for="te-4-2">To compare incomparable things</label>
-                    </div>
-                    <div class="tasks-one-answer col-9 col-md-6">
-                      <input type="text" class="form-control" name="te-4-2" id="te-4-2">
-                      <div class="d-none" id="feedback-4-2">Apples and oranges</div>
-                    </div>
-                    <div class="tasks-one-help task-help col-3 col-md-2">
-                      <button type="button" class="task-one-help__btn btn btn-info" id="help-4-2">Help</button>
-                    </div>
-                  </div>
+              <form action="/apply/" method="POST" id="tasksForm">
+                <div class="tasks-wrapper" id="tasksWrapper">
+
                 </div>
                 <button type="submit" class="tasks-btn btn btn-primary">Done!</button>
               </form>

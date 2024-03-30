@@ -1,0 +1,113 @@
+[
+  {
+    "type": "choose",
+    "problems": [
+      {
+        "question": "The apple never falls far from the tree",
+        "variants": [
+          {
+            "text": "Всё проще, чем кажется",
+            "accuracy": "w"
+          },
+          {
+            "text": "Яблоко от яблони недалеко падает",
+            "accuracy": "c"
+          },
+          {
+            "text": "Краткость сестра таланта",
+            "accuracy": "w"
+          },
+          {
+            "text": "Яблоку негде упасть",
+            "accuracy": "w"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "connect",
+    "problems": [
+      {
+        "id": "1",
+        "letter": "a",
+        "part1": "To be in",
+        "part2": "beans",
+        "answer": "c"
+      },
+      {
+        "id": "2",
+        "letter": "b",
+        "part1": "To polish",
+        "part2": "one's apple",
+        "answer": "b"
+      },
+      {
+        "id": "3",
+        "letter": "c",
+        "part1": "To be full of",
+        "part2": "cherry condition",
+        "answer": "a"
+      },
+      {
+        "id": "4",
+        "letter": "d",
+        "part1": "Life is",
+        "part2": "a bowl of cherries",
+        "answer": "d"
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "problems": [
+      [
+        {
+          "text": "Lorem ipsum dolor sit amet"
+        },
+        {
+          "variants": [
+            "mollitia",
+            "saepe",
+            "consectetur",
+            "maiores"
+          ],
+          "answer": "consectetur"
+        },
+        {
+          "text": "adipisicing elit."
+        }
+      ],
+      [
+        {
+          "text": "Eum pariatur laudantium nisi sequi"
+        },
+        {
+          "variants": [
+            "eligendi",
+            "placeat",
+            "nostrum",
+            "elit"
+          ],
+          "answer": "eligendi"
+        },
+        {
+          "text": "est velit consequuntur aliquam ducimus. Dolore harum nostrum iure saepe maiores, est atque mollitia placeat numquam."
+        }
+      ]
+    ]
+  },
+  {
+    "type": "translate",
+    "problems": [
+      {
+        "question": "Desired or loved one",
+        "answer": "The apple of my eye"
+      },
+      {
+        "question": "To compare incomparable things",
+        "answer": "Apples and oranges"
+      }
+    ]
+  }
+]

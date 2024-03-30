@@ -112,26 +112,21 @@ header {
   margin: 15px 0 25px;
 }
 
-.task-one {
+.task-item {
   margin: 0 0 10px;
 }
 
-.input-table {
-  border-collapse: separate;
-  border-spacing: 50px 0;
-}
-
-.row-table-cell {
-  padding: 10px 0;
-}
-
-.task-text {
+.task-p {
   display: inline;
 }
 
 .missed,
 .missed-select,
-.missed__feedback {
+.missed-select~.missed__feedback {
   width: fit-content;
   display: inline;
+}
+
+.task-item-part-input__input {
+  max-width: 50%;
 }
