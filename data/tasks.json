@@ -18,12 +18,7 @@
             "accuracy": "c"
           }
         ]
-      }
-    ]
-  },
-  {
-    "type": "choose",
-    "problems": [
+      },
       {
         "question": "Sour grapes",
         "variants": [
@@ -40,12 +35,7 @@
             "accuracy": "w"
           }
         ]
-      }
-    ]
-  },
-  {
-    "type": "choose",
-    "problems": [
+      },
       {
         "question": "Cherry-pick",
         "variants": [
@@ -62,12 +52,7 @@
             "accuracy": "w"
           }
         ]
-      }
-    ]
-  },
-  {
-    "type": "choose",
-    "problems": [
+      },
       {
         "question": "Bad apple",
         "variants": [
@@ -84,12 +69,7 @@
             "accuracy": "w"
           }
         ]
-      }
-    ]
-  },
-  {
-    "type": "choose",
-    "problems": [
+      },
       {
         "question": "How do you like them apples?",
         "variants": [
@@ -106,12 +86,7 @@
             "accuracy": "w"
           }
         ]
-      }
-    ]
-  },
-  {
-    "type": "choose",
-    "problems": [
+      },
       {
         "question": "Top banana",
         "variants": [
@@ -128,12 +103,7 @@
             "accuracy": "c"
           }
         ]
-      }
-    ]
-  },
-  {
-    "type": "choose",
-    "problems": [
+      },
       {
         "question": "Go pear-shaped",
         "variants": [
@@ -150,12 +120,7 @@
             "accuracy": "w"
           }
         ]
-      }
-    ]
-  },
-  {
-    "type": "choose",
-    "problems": [
+      },
       {
         "question": "Life is a bowl of cherries",
         "variants": [
@@ -172,12 +137,7 @@
             "accuracy": "c"
           }
         ]
-      }
-    ]
-  },
-  {
-    "type": "choose",
-    "problems": [
+      },
       {
         "question": "Polish (one’s) apple",
         "variants": [
@@ -194,12 +154,7 @@
             "accuracy": "w"
           }
         ]
-      }
-    ]
-  },
-  {
-    "type": "choose",
-    "problems": [
+      },
       {
         "question": "The apple of my eye",
         "variants": [
