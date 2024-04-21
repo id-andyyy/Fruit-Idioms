@@ -18,7 +18,6 @@ function changeContentLocation() {
 
     theoryContentHeaderBtnNode.classList.toggle("d-none");
 
-    offCanvasListener("theoryContent");
   } else {
     theoryContentNode.removeAttribute("tabindex");
     theoryContentNode.removeAttribute("aria-labelledby");
@@ -192,20 +191,27 @@ function handleFormSubmit(event) {
   }
 }
 
-function offCanvasListener(offCanvasId) {
-  let myOffCanvas = document.getElementById(offCanvasId);
+window.addEventListener("load", function () {
+  var headerHeight = document.querySelector(".header").offsetHeight + 10;
 
-  const hideCanvas = () => {
-    let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
-    openedCanvas.hide();
-    event.target.removeEventListener('mouseleave', hideCanvas);
-  }
-  const listenToMouseLeave = (event) => {
-    event.target.addEventListener('mouseleave', hideCanvas);
+  function handleClick(event) {
+    if (event.target.hash) {
+      event.preventDefault();
+
+      var targetElement = document.querySelector(event.target.hash);
+      if (targetElement) {
+        var targetOffset = targetElement.offsetTop - headerHeight;
+
+        window.scrollTo({
+          top: targetOffset,
+          behavior: "smooth"
+        });
+      }
+    }
   }
 
-  myOffCanvas.addEventListener('shown.bs.offcanvas', listenToMouseLeave);
-}
+  document.addEventListener("click", handleClick);
+});
 
 changeContentLocation();
 addArticles();
