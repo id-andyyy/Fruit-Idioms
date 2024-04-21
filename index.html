@@ -73,7 +73,7 @@
   <script type="text/x-handlebars-template" id="taskChooseTemplate">
     <div class="tasks-choose task">
       <h5 class="task-heading">Задание {{id}}</h5>
-      <p class="task-description">Выбери перевод идиомы на русский</p>
+      <p class="task-description">Выбери перевод идиомы на русский язык</p>
       {{#each problems}}
       <fieldset class="task-item form-group row" id="group-{{../id}}-{{@index}}">
         <div class="task-item-question col-12 col-md-6">
@@ -146,7 +146,7 @@
   <script type="text/x-handlebars-template" id="taskTranslateTemplate">
     <div class="tasks-translate task">
       <h5 class="task-heading">Задание {{id}}</h5>
-      <p class="task-description">Напиши идиому</p>
+      <p class="task-description">Напиши на английском идиому с данным значением</p>
       {{#each problems}}
       <div class="task-item form-group row" id="group-{{../id}}-{{@index}}">
         <div class="task-item-question col-12 col-md-4">
@@ -198,10 +198,10 @@
           </div>
           <section class="theory-articles col-lg">
             <section class="theory-articles-summary summary" id="theoryArticlesSummary">
-              <h4 class="summary-heading">Fruit idioms 🍓</h4>
+              <h4 class="summary-heading">Статьи про идиомы</h4>
             </section>
             <section class="theory-article-tasks tasks" id="tasks">
-              <h4 class="tasks-heading">Задания</h4>
+              <h4 class="tasks-heading">Задания для повторения</h4>
               <form action="/apply/" method="POST" id="tasksForm">
                 <div class="tasks-wrapper" id="tasksWrapper">
                 </div>
@@ -212,7 +212,7 @@
                       aria-valuemin="0" aria-valuemax="100" id="tasksResultProgress"></div>
                   </div>
                 </div>
-                <button type="submit" class="tasks-btn btn btn-primary">Done!</button>
+                <button type="submit" class="tasks-btn btn btn-primary">Check!</button>
               </form>
             </section>
           </section>
@@ -220,6 +220,12 @@
       </div>
     </section>
   </main>
+  <footer class="footer">
+    <div class="container">
+      <hr>
+      <div class="copyright">© Fruit idioms 2024 v1.1</div>
+    </div>
+  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"

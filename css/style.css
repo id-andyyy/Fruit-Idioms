@@ -1,3 +1,12 @@
+/* NAVBAR */
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.btn-close {
+  --bs-btn-close-focus-shadow: none;
+}
+
 /* HEADER */
 .header {
   position: sticky;
@@ -21,7 +30,7 @@
 
 /* THEORY */
 .theory {
-  padding: 10px 0;
+  margin: 10px 0 20px;
 }
 
 /* Content */
@@ -60,6 +69,14 @@
 }
 
 /* Summary */
+.summary {
+  margin: 0 0 20px;
+}
+
+.summary-heading {
+  margin: 0 0 15px;
+}
+
 .article-point {
   font-weight: 300;
   margin-bottom: 0px;
@@ -124,6 +141,14 @@
 
 /* Test */
 .task {
+  margin: 0 0 12px;
+}
+
+.tasks-heading {
+  margin: 0 0 15px;
+}
+
+.tasks-wrapper {
   margin: 0 0 10px;
 }
 
@@ -132,7 +157,7 @@
 }
 
 .task-item {
-  margin: 0 0 10px;
+  margin: 0 0 20px;
 }
 
 .task-p {
@@ -148,4 +173,19 @@
 
 .task-item-part-input__input {
   max-width: 50%;
+}
+
+.tasks-result__heading {
+  margin: 0 0 15px
+}
+
+/* FOOTER */
+.footer {
+  margin: 30px 0 0;
+}
+
+.copyright {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 20px
 }
