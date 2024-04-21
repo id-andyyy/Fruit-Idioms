@@ -68,8 +68,8 @@
    </script>
   <script type="text/x-handlebars-template" id="taskChooseTemplate">
     <div class="tasks-choose task">
-      <h5 class="task-heading">Task {{id}}</h5>
-      <p class="task-description">Choose a translation of the idiom into Russian</p>
+      <h5 class="task-heading">Задание {{id}}</h5>
+      <p class="task-description">Выбери перевод идиомы на русский</p>
       {{#each problems}}
       <fieldset class="task-item form-group row" id="group-{{../id}}-{{@index}}">
         <div class="task-item-question col-12 col-md-6">
@@ -91,8 +91,8 @@
   </script>
   <script type="text/x-handlebars-template" id="taskConnectTemplate">
     <div class="tasks-translate task">
-      <h5 class="task-heading">Task {{id}}</h5>
-      <p class="task-description">Connect the beginning and the end of the idioms</p>
+      <h5 class="task-heading">Задание {{id}}</h5>
+      <p class="task-description">Сопоставь части идиом</p>
       {{#each problems}}
       <div class="task-item row">
         <div class="task-item-part form-group col-8 row" id="group-{{../id}}-{{@index}}">
@@ -113,8 +113,8 @@
   </script>
   <script type="text/x-handlebars-template" id="taskTextTemplate">
     <div class="tasks-text task">
-      <h5 class="task-heading">Task {{id}}</h5>
-      <p class="task-description">Insert the missing idioms into the text</p>
+      <h5 class="task-heading">Задание {{id}}</h5>
+      <p class="task-description">Вставь пропущенную идиому в предложение</p>
       {{#each problems}}
       <div class="task-item">
         {{#each this}}
@@ -141,8 +141,8 @@
   </script>
   <script type="text/x-handlebars-template" id="taskTranslateTemplate">
     <div class="tasks-translate task">
-      <h5 class="task-heading">Task {{id}}</h5>
-      <p class="task-description">Write a fruit idiom with the meaning</p>
+      <h5 class="task-heading">Задание {{id}}</h5>
+      <p class="task-description">Напиши идиому</p>
       {{#each problems}}
       <div class="task-item form-group row" id="group-{{../id}}-{{@index}}">
         <div class="task-item-question col-12 col-md-4">
@@ -179,7 +179,7 @@
         <div class="row">
           <div class="theory-content col-lg-4" id="theoryContent">
             <div class="theory-content-header" id="theoryContentHeader">
-              <h4 class="theory-content-header__title" id="theoryContentHeaderTitle">Choose one of the idioms</h4>
+              <h4 class="theory-content-header__title" id="theoryContentHeaderTitle">Выбери идиому</h4>
               <button class="theory-content-header__btn btn-close d-none" type="button" data-bs-dismiss="offcanvas"
                 aria-label="Close" id="theoryContentHeaderBtn"></button>
             </div>
@@ -193,9 +193,9 @@
               <h4 class="summary-heading">Idioms</h4>
             </section>
             <section class="theory-article-tasks tasks">
-              <h4 class="tasks-heading">Tasks</h4>
+              <h4 class="tasks-heading">Задания</h4>
               <div class="tasks-result d-none" id="tasksResult">
-                <h5 class="tasks-result__heading" id="tasksResultHeading">Your result: 0%</h5>
+                <h5 class="tasks-result__heading" id="tasksResultHeading">Твой результат: 0%</h5>
                 <div class="progress">
                   <div class="tasks-result__progress progress-bar" role="progressbar" aria-valuenow="0"
                     aria-valuemin="0" aria-valuemax="100" id="tasksResultProgress"></div>
