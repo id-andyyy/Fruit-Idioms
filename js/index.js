@@ -176,7 +176,7 @@ function handleFormSubmit(event) {
   let tasksResultProgressNode = document.querySelector("#tasksResultProgress");
 
   tasksResultNode.classList.remove("d-none");
-  tasksResultHeadingNode.textContent = `Your result: ${result}%`;
+  tasksResultHeadingNode.textContent = `Результат: ${result}%`;
   tasksResultProgressNode.setAttribute("area-valuenow", result);
   tasksResultProgressNode.style.width = `${result}%`;
 

@@ -13,6 +13,10 @@ header {
     overflow: scroll;
     overflow-x: hidden;
   }
+
+  .theory-content-body::-webkit-scrollbar {
+    width: 0;
+  }
 }
 
 /* THEORY */
