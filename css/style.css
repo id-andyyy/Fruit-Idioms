@@ -1,3 +1,12 @@
+/* NAVBAR */
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.btn-close {
+  --bs-btn-close-focus-shadow: none;
+}
+
 /* HEADER */
 .header {
   position: sticky;
@@ -164,4 +173,19 @@
 
 .task-item-part-input__input {
   max-width: 50%;
+}
+
+.tasks-result__heading {
+  margin: 0 0 15px
+}
+
+/* FOOTER */
+.footer {
+  margin: 30px 0 0;
+}
+
+.copyright {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 20px
 }
