@@ -17,6 +17,8 @@ function changeContentLocation() {
     theoryContentBodyNode.classList.toggle("offcanvas-body");
 
     theoryContentHeaderBtnNode.classList.toggle("d-none");
+
+    offCanvasListener("theoryContent");
   } else {
     theoryContentNode.removeAttribute("tabindex");
     theoryContentNode.removeAttribute("aria-labelledby");
@@ -188,6 +190,21 @@ function handleFormSubmit(event) {
   } else {
     tasksResultProgressNode.classList.add("bg-success");
   }
+}
+
+function offCanvasListener(offCanvasId) {
+  let myOffCanvas = document.getElementById(offCanvasId);
+
+  const hideCanvas = () => {
+    let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
+    openedCanvas.hide();
+    event.target.removeEventListener('mouseleave', hideCanvas);
+  }
+  const listenToMouseLeave = (event) => {
+    event.target.addEventListener('mouseleave', hideCanvas);
+  }
+
+  myOffCanvas.addEventListener('shown.bs.offcanvas', listenToMouseLeave);
 }
 
 changeContentLocation();
