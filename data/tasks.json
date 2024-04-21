@@ -1,0 +1,462 @@
+[
+  {
+    "type": "choose",
+    "problems": [
+      {
+        "question": "Upset the apple cart",
+        "variants": [
+          {
+            "text": "расстроить кого-то",
+            "accuracy": "w"
+          },
+          {
+            "text": "испортить урожай",
+            "accuracy": "w"
+          },
+          {
+            "text": "сорвать планы",
+            "accuracy": "c"
+          }
+        ]
+      },
+      {
+        "question": "Sour grapes",
+        "variants": [
+          {
+            "text": "глупый поступок",
+            "accuracy": "w"
+          },
+          {
+            "text": "притворное пренебрежение",
+            "accuracy": "c"
+          },
+          {
+            "text": "грустное выражение лица",
+            "accuracy": "w"
+          }
+        ]
+      },
+      {
+        "question": "Cherry-pick",
+        "variants": [
+          {
+            "text": "выбор только хорошего без учета всего",
+            "accuracy": "c"
+          },
+          {
+            "text": "правильный выбор",
+            "accuracy": "w"
+          },
+          {
+            "text": "неразумный выбор",
+            "accuracy": "w"
+          }
+        ]
+      },
+      {
+        "question": "Bad apple",
+        "variants": [
+          {
+            "text": "неприятный человек",
+            "accuracy": "c"
+          },
+          {
+            "text": "глупый поступок",
+            "accuracy": "w"
+          },
+          {
+            "text": "плохо-сделанная работа",
+            "accuracy": "w"
+          }
+        ]
+      },
+      {
+        "question": "How do you like them apples?",
+        "variants": [
+          {
+            "text": "что из этого ты выберешь?",
+            "accuracy": "w"
+          },
+          {
+            "text": "как тебе такое?",
+            "accuracy": "c"
+          },
+          {
+            "text": "как я выгляжу?",
+            "accuracy": "w"
+          }
+        ]
+      },
+      {
+        "question": "Top banana",
+        "variants": [
+          {
+            "text": "идеальный человек",
+            "accuracy": "w"
+          },
+          {
+            "text": "эгоистичный человек",
+            "accuracy": "w"
+          },
+          {
+            "text": "лидер",
+            "accuracy": "c"
+          }
+        ]
+      },
+      {
+        "question": "Go pear-shaped",
+        "variants": [
+          {
+            "text": "завидовать",
+            "accuracy": "w"
+          },
+          {
+            "text": "пойти не так",
+            "accuracy": "c"
+          },
+          {
+            "text": "сделать аккуратно",
+            "accuracy": "w"
+          }
+        ]
+      },
+      {
+        "question": "Life is a bowl of cherries",
+        "variants": [
+          {
+            "text": "скучная жизнь",
+            "accuracy": "w"
+          },
+          {
+            "text": "жизнь полная загадок",
+            "accuracy": "w"
+          },
+          {
+            "text": "прекрасная жизнь",
+            "accuracy": "c"
+          }
+        ]
+      },
+      {
+        "question": "Polish (one’s) apple",
+        "variants": [
+          {
+            "text": "льстить",
+            "accuracy": "c"
+          },
+          {
+            "text": "улучшить отношения с кем-то",
+            "accuracy": "w"
+          },
+          {
+            "text": "помочь кому-то",
+            "accuracy": "w"
+          }
+        ]
+      },
+      {
+        "question": "The apple of my eye",
+        "variants": [
+          {
+            "text": "увиденное своими глазами",
+            "accuracy": "w"
+          },
+          {
+            "text": "зеница ока",
+            "accuracy": "c"
+          },
+          {
+            "text": "чувство прекрасного",
+            "accuracy": "w"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "connect",
+    "problems": [
+      {
+        "id": "1",
+        "letter": "a",
+        "part1": "As American as",
+        "part2": "pick",
+        "answer": "d"
+      },
+      {
+        "id": "2",
+        "letter": "b",
+        "part1": "Speak with a plum in",
+        "part2": "job",
+        "answer": "c"
+      },
+      {
+        "id": "3",
+        "letter": "c",
+        "part1": "Apples and",
+        "part2": "mouth",
+        "answer": "e"
+      },
+      {
+        "id": "4",
+        "letter": "d",
+        "part1": "Cherry-",
+        "part2": "apple pie",
+        "answer": "a"
+      },
+      {
+        "id": "5",
+        "letter": "e",
+        "part1": "Go",
+        "part2": "oranges",
+        "answer": "h"
+      },
+      {
+        "id": "6",
+        "letter": "f",
+        "part1": "Sour",
+        "part2": "apple",
+        "answer": "j"
+      },
+      {
+        "id": "7",
+        "letter": "g",
+        "part1": "Peaches and",
+        "part2": "cream",
+        "answer": "g"
+      },
+      {
+        "id": "8",
+        "letter": "h",
+        "part1": "Life is a bowl of",
+        "part2": "bananas",
+        "answer": "i"
+      },
+      {
+        "id": "9",
+        "letter": "i",
+        "part1": "A plum",
+        "part2": "cherries",
+        "answer": "b"
+      },
+      {
+        "id": "10",
+        "letter": "j",
+        "part1": "Bad",
+        "part2": "grapes",
+        "answer": "f"
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "problems": [
+      [
+        {
+          "text": "You can’t compare these two companies. They are just"
+        },
+        {
+          "variants": [
+            "apples and oranges",
+            "sour grapes",
+            "bad apples"
+          ],
+          "answer": "apples and oranges"
+        },
+        {
+          "text": "."
+        }
+      ],
+      [
+        {
+          "text": "I always"
+        },
+        {
+          "variants": [
+            "speak with a plum in my mouth",
+            "compare apples and oranges",
+            "go bananas"
+          ],
+          "answer": "go bananas"
+        },
+        {
+          "text": "when you don’t pick up the phone."
+        }
+      ],
+      [
+        {
+          "text": "Mary has a talent for singing and playing the piano, just like her mother. Indeed,"
+        },
+        {
+          "variants": [
+            "apple polisher",
+            "the apple doesn’t falls far from the tree",
+            "life is a bowl of cherries"
+          ],
+          "answer": "the apple doesn’t falls far from the tree"
+        },
+        {
+          "text": "."
+        }
+      ],
+      [
+        {
+          "text": "Above all, we note that, if things"
+        },
+        {
+          "variants": [
+            "upset the apple cart",
+            "go bananas",
+            "go pear-shaped"
+          ],
+          "answer": "go pear-shaped"
+        },
+        {
+          "text": ", we can rely on our friends."
+        }
+      ],
+      [
+        {
+          "text": "Look, he's not trying to"
+        },
+        {
+          "variants": [
+            "bite at the cherry",
+            "upset the apple cart",
+            "cherry-pick"
+          ],
+          "answer": "upset the apple cart"
+        },
+        {
+          "text": "— he just wants to help us."
+        }
+      ],
+      [
+        {
+          "text": "Since she got that"
+        },
+        {
+          "variants": [
+            "plum job",
+            "top banana",
+            "bad apple"
+          ],
+          "answer": "plum job"
+        },
+        {
+          "text": "with the bank, she is been buying a second home. "
+        }
+      ],
+      [
+        {
+          "text": "The team, hoping for a second"
+        },
+        {
+          "variants": [
+            "plum job",
+            "banana",
+            "bite at the cherry"
+          ],
+          "answer": "bite at the cherry"
+        },
+        {
+          "text": "prepared extensively for the competition."
+        }
+      ],
+      [
+        {
+          "text": "He doesn't want to be a"
+        },
+        {
+          "variants": [
+            "second banana",
+            "top banana",
+            "the apple of my eye"
+          ],
+          "answer": "second banana"
+        },
+        {
+          "text": ", he wants to be the best. "
+        }
+      ],
+      [
+        {
+          "text": "She has such a"
+        },
+        {
+          "variants": [
+            "sour grapes",
+            "peaches and cream",
+            "cherry-pick"
+          ],
+          "answer": "peaches and cream"
+        },
+        {
+          "text": "hair."
+        }
+      ],
+      [
+        {
+          "text": "Brian always"
+        },
+        {
+          "variants": [
+            "go pear-shaped",
+            "polishes apple",
+            "go bananas"
+          ],
+          "answer": "polishes apple"
+        },
+        {
+          "text": "with his boss because he's hoping for a promotion."
+        }
+      ]
+    ]
+  },
+  {
+    "type": "translate",
+    "problems": [
+      {
+        "question": "Яблоко от яблони недалеко падает",
+        "answer": "The apple never falls far from the tree"
+      },
+      {
+        "question": "Все испортить",
+        "answer": "Upset the apple cart"
+      },
+      {
+        "question": "Подлинно американское",
+        "answer": "As American as apple pie"
+      },
+      {
+        "question": "Иметь характерное для высших слоёв общества произношение",
+        "answer": "Speak with a plum in mouth"
+      },
+      {
+        "question": "Шанс или возможность",
+        "answer": "A bite at the cherry"
+      },
+      {
+        "question": "Льстец",
+        "answer": "Apple polisher"
+      },
+      {
+        "question": "Свести кого-то с ума",
+        "answer": "To drive someone bananas"
+      },
+      {
+        "question": "Зеница ока",
+        "answer": "The apple of my eye"
+      },
+      {
+        "question": "Как тебе такое?",
+        "answer": "How do you like them apples?"
+      },
+      {
+        "question": "Хорошая работа",
+        "answer": "A plum job"
+      }
+    ]
+  }
+]

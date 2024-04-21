@@ -1,56 +1,132 @@
+/* HEADER */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
 /* THEORY */
 .theory {
-   margin: 10px 0;
+  padding: 10px 0;
 }
+
 /* Content */
-.theory-content-body-list-one__link {
-   color: unset;
-   text-decoration: none;
+.content-item__primary {
+  border-color: #78c2ad;
 }
+
+.content-item__secondary {
+  border-color: #f3969a;
+}
+
+.content-item__info {
+  border-color: #6cc3d5;
+}
+
+.content-item__warning {
+  border-color: #ffce67;
+}
+
+.content-item__success {
+  border-color: #56cc9d;
+}
+
+.content-item__danger {
+  border-color: #ff7851;
+}
+
+.content-item__link {
+  color: unset;
+  text-decoration: none;
+}
+
 /* Summary */
 .article-point {
-   font-weight: 300;
-   margin-bottom: 0px;
+  font-weight: 300;
+  margin-bottom: 0px;
 }
-.article-point__big {
-   font-size: 1.25rem
-}
+
 .article-point__small {
-   font-size: 1.05rem;
+  font-size: 1.05rem;
 }
-.summary-one-meaning, .summary-one-examples {
-   margin-top: 5px;
+
+.article-point-header {
+  font-weight: 400;
 }
+
+.summary-one-meaning,
+.summary-one-examples {
+  margin-top: 5px;
+}
+
 .summary-one-origin {
-   margin-top: 5px;
+  margin-top: 5px;
 }
+
 .examples-list-item-text__eng_underlined {
-   text-decoration: underline;
+  text-decoration: underline;
 }
+
 .examples-list-item-text__rus {
-   color: #a6a6a6
+  color: #a6a6a6;
 }
+
+.accordion-button:focus {
+  box-shadow: none;
+}
+
+.accordion-button__primary {
+  --bs-accordion-active-bg: #e4f3ef;
+}
+
+.accordion-button__secondary {
+  --bs-accordion-active-bg: #fdeaeb;
+}
+
+.accordion-button__info {
+  --bs-accordion-active-bg: #e2f3f7;
+}
+
+.accordion-button__warning {
+  --bs-accordion-active-bg: #fff5e1;
+}
+
+.accordion-button__success {
+  --bs-accordion-active-bg: #ddf5eb;
+}
+
+.accordion-button__danger {
+  --bs-accordion-active-bg: #ffe4dc;
+}
+
+.accordion-body__padding {
+  margin-bottom: -14px;
+}
+
 /* Test */
 .task {
-   margin: 0 0 10px;
+  margin: 0 0 10px;
 }
+
 .tasks-result {
-   margin: 15px 0 25px;
+  margin: 15px 0 25px;
 }
-.task-one {
-   margin: 0 0 10px;
+
+.task-item {
+  margin: 0 0 10px;
 }
-.input-table {
-   border-collapse: separate;
-   border-spacing: 50px 0;
+
+.task-p {
+  display: inline;
 }
-.row-table-cell {
-   padding: 10px 0;
+
+.missed,
+.missed-select,
+.missed-select ~ .missed__feedback {
+  width: fit-content;
+  display: inline;
 }
-.task-text {
-   display: inline;
-}
-.missed, .missed-select, .missed__feedback {
-   width: fit-content;
-   display: inline;
+
+.task-item-part-input__input {
+  max-width: 50%;
 }
