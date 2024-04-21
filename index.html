@@ -73,7 +73,7 @@
   <script type="text/x-handlebars-template" id="taskChooseTemplate">
     <div class="tasks-choose task">
       <h5 class="task-heading">Задание {{id}}</h5>
-      <p class="task-description">Выбери перевод идиомы на русский</p>
+      <p class="task-description">Выбери перевод идиомы на русский язык</p>
       {{#each problems}}
       <fieldset class="task-item form-group row" id="group-{{../id}}-{{@index}}">
         <div class="task-item-question col-12 col-md-6">
@@ -146,7 +146,7 @@
   <script type="text/x-handlebars-template" id="taskTranslateTemplate">
     <div class="tasks-translate task">
       <h5 class="task-heading">Задание {{id}}</h5>
-      <p class="task-description">Напиши идиому</p>
+      <p class="task-description">Напиши на английском идиому с данным значением</p>
       {{#each problems}}
       <div class="task-item form-group row" id="group-{{../id}}-{{@index}}">
         <div class="task-item-question col-12 col-md-4">
@@ -198,10 +198,10 @@
           </div>
           <section class="theory-articles col-lg">
             <section class="theory-articles-summary summary" id="theoryArticlesSummary">
-              <h4 class="summary-heading">Fruit idioms 🍓</h4>
+              <h4 class="summary-heading">Статьи про идиомы</h4>
             </section>
             <section class="theory-article-tasks tasks" id="tasks">
-              <h4 class="tasks-heading">Задания</h4>
+              <h4 class="tasks-heading">Задания для повторения</h4>
               <form action="/apply/" method="POST" id="tasksForm">
                 <div class="tasks-wrapper" id="tasksWrapper">
                 </div>
