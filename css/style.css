@@ -5,6 +5,16 @@ header {
   z-index: 1;
 }
 
+@media screen and (min-width: 992px) {
+  .theory-content-body {
+    position: fixed;
+    top: 60px;
+    height: 90vh;
+    overflow: scroll;
+    overflow-x: hidden;
+  }
+}
+
 /* THEORY */
 .theory {
   padding: 10px 0;
@@ -33,6 +43,10 @@ header {
 
 .content-item__danger {
   border-color: #ff7851;
+}
+
+.content-item__tasks {
+  background-color: #ddf5eb;
 }
 
 .content-item__link {
@@ -122,7 +136,7 @@ header {
 
 .missed,
 .missed-select,
-.missed-select ~ .missed__feedback {
+.missed-select~.missed__feedback {
   width: fit-content;
   display: inline;
 }
