@@ -291,10 +291,10 @@
         {
           "variants": [
             "apple polisher",
-            "the apple doesn’t falls far from the tree",
+            "the apple doesn’t fall far from the tree",
             "life is a bowl of cherries"
           ],
-          "answer": "the apple doesn’t falls far from the tree"
+          "answer": "the apple doesn’t fall far from the tree"
         },
         {
           "text": "."
@@ -345,7 +345,7 @@
           "answer": "plum job"
         },
         {
-          "text": "with the bank, she is been buying a second home. "
+          "text": "with the bank, she has been buying a second home. "
         }
       ],
       [
