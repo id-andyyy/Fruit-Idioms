@@ -46,6 +46,9 @@ function addArticles() {
         theoryContentBodyList.innerHTML += contentTemplate(articleData);
         theoryArticlesSummary.innerHTML += articleTemplate(articleData);
       });
+
+      let article0 = document.querySelector("#article-0");
+      article0.classList.add("d-none");
     });
 }
 
