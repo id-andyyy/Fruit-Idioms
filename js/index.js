@@ -17,7 +17,6 @@ function changeContentLocation() {
     theoryContentBodyNode.classList.toggle("offcanvas-body");
 
     theoryContentHeaderBtnNode.classList.toggle("d-none");
-
   } else {
     theoryContentNode.removeAttribute("tabindex");
     theoryContentNode.removeAttribute("aria-labelledby");
@@ -47,8 +46,14 @@ function addArticles() {
         theoryArticlesSummary.innerHTML += articleTemplate(articleData);
       });
 
-      let article0 = document.querySelector("#article-0");
+      let article0 = document.querySelector("#article0");
       article0.classList.add("d-none");
+
+      let loadingContent = document.querySelector("#loadingContent");
+      loadingContent.classList.add("d-none");
+
+      let loadingArticles = document.querySelector("#loadingArticles");
+      loadingArticles.classList.add("d-none");
     });
 }
 

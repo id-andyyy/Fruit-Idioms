@@ -214,13 +214,18 @@
                   data-bs-dismiss="offcanvas">
                   <a class="content-item__link" href="#tasks">Задания</a>
                 </li>
+                <li class="content-item content-item__primary list-group-item d-flex align-items-center"
+                  id="loadingContent">
+                  <div>Загрузка содержания...</div>
+                  <div class="spinner-border spinner-border-sm ms-auto" role="status" aria-hidden="true"></div>
+                </li>
               </ul>
             </div>
           </div>
           <section class="theory-articles col-lg">
             <section class="theory-articles-summary summary" id="theoryArticlesSummary">
               <h4 class="summary-heading">Статьи про идиомы</h4>
-              <article class="summary-one card border-primary mb-3" id="article-0" aria-hidden="true">
+              <article class="summary-one card border-primary mb-3" id="article0" aria-hidden="true">
                 <h5 class="summary-one__heading card-header card-title placeholder-glow">
                   <span class="placeholder col-4"></span>
                 </h5>
@@ -296,6 +301,10 @@
                   </div>
                 </div>
               </article>
+              <div class="d-flex align-items-center" id="loadingArticles">
+                <p>Загрузка статей...</p>
+                <div class="spinner-border ms-auto" role="status" aria-hidden="true"></div>
+              </div>
             </section>
             <section class="theory-article-tasks tasks" id="tasks">
               <h4 class="tasks-heading">Задания для повторения</h4>
