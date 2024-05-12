@@ -10,7 +10,7 @@
     content="Узнайте новые фруктовые идиомы на английском. Пора разнообразить свою речь! Задания для закрепления результатов.">
   <meta name="keywords"
     content="идиомы, английский, фрукты, фруктовые, речь, учить, изучать, бесплатно, онлайн, дети, школьники, школа, урок, курсы, курс, язык, самоучитель, игра, самостоятельно, уроки, обучени, изучение, ресурс">
-  <link href="https://fruit-idioms.vercel.app/favicon.ico" rel="image/x-icon">
+  <link href="/favicon.ico" rel="icon">
   <link href="css/nullstyle.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
@@ -310,15 +310,38 @@
               <h4 class="tasks-heading">Задания для повторения</h4>
               <form action="/apply/" method="POST" id="tasksForm">
                 <div class="tasks-wrapper" id="tasksWrapper">
+                  <div class="tasks-choose task" id="loadingTask0">
+                    <h5 class="task-heading placeholder-glow"><span class="placeholder col-4"></span></h5>
+                    <p class="task-description placeholder-glow"><span class="placeholder col-11"></span></p>
+                    <p class="placeholder-glow">
+                      <span class="placeholder col-10"></span><br>
+                      <span class="placeholder col-5"></span><br>
+                      <span class="placeholder col-6"></span><br>
+                      <span class="placeholder col-4"></span><br>
+                      <span class="placeholder col-5"></span><br>
+                    </p>
+                    <p class="placeholder-glow">
+                      <span class="placeholder col-7"></span><br>
+                      <span class="placeholder col-4"></span><br>
+                      <span class="placeholder col-3"></span><br>
+                      <span class="placeholder col-4"></span><br>
+                      <span class="placeholder col-4"></span><br>
+                    </p>
+                  </div>
+                  <div class="d-flex align-items-center" id="loadingTask1">
+                    <p>Загрузка заданий...</p>
+                    <div class="spinner-border ms-auto" role="status" aria-hidden="true"></div>
+                  </div>
                 </div>
                 <div class="tasks-result d-none" id="tasksResult">
-                  <h5 class="tasks-result__heading" id="tasksResultHeading">Результат: 0%</h5>
+                  <h5 class="tasks-result__heading" id="tasksResultHeading">Ваш результат: 0%</h5>
                   <div class="progress">
                     <div class="tasks-result__progress progress-bar" role="progressbar" aria-valuenow="0"
                       aria-valuemin="0" aria-valuemax="100" id="tasksResultProgress"></div>
                   </div>
                 </div>
-                <button type="submit" class="tasks-btn btn btn-primary">Check!</button>
+                <a href="#" tabindex="-1" class="btn btn-primary disabled placeholder col-3" id="loadingButton"></a>
+                <button type="submit" class="tasks-btn btn btn-primary d-none" id="taskButton">Проверить ответы</button>
               </form>
             </section>
           </section>
