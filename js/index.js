@@ -17,7 +17,6 @@ function changeContentLocation() {
     theoryContentBodyNode.classList.toggle("offcanvas-body");
 
     theoryContentHeaderBtnNode.classList.toggle("d-none");
-
   } else {
     theoryContentNode.removeAttribute("tabindex");
     theoryContentNode.removeAttribute("aria-labelledby");
@@ -46,6 +45,15 @@ function addArticles() {
         theoryContentBodyList.innerHTML += contentTemplate(articleData);
         theoryArticlesSummary.innerHTML += articleTemplate(articleData);
       });
+
+      let article0 = document.querySelector("#article0");
+      article0.classList.add("d-none");
+
+      let loadingContent = document.querySelector("#loadingContent");
+      loadingContent.classList.add("d-none");
+
+      let loadingArticles = document.querySelector("#loadingArticles");
+      loadingArticles.classList.add("d-none");
     });
 }
 
@@ -89,6 +97,17 @@ function addTasks() {
           });
         }
       });
+      let loadingTask0 = document.querySelector("#loadingTask0");
+      loadingTask0.classList.add("d-none");
+
+      let loadingTask1 = document.querySelector("#loadingTask1");
+      loadingTask1.classList.add("d-none");
+
+      let loadingButton = document.querySelector("#loadingButton")
+      loadingButton.classList.add("d-none")
+
+      let taskButton = document.querySelector("#taskButton")
+      taskButton.classList.remove("d-none")
     });
 }
 
