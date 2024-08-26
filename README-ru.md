@@ -1,4 +1,4 @@
-![Арт](https://i.postimg.cc/SsqPL45Y/art.png)
+![Арт](https://i.postimg.cc/hGHdNPgh/art.png)
 
 ![GitHub Created At](https://img.shields.io/github/created-at/id-andyyy/Fruit-Idioms?style=flat&color=%23540554)
 ![Lines Of Code](https://tokei.rs/b1/github/id-andyyy/Fruit-Idioms?style=flat&category=code&color=%23FF9100)
@@ -36,7 +36,7 @@
 
 Посетите [сайт](https://fruit-idioms.vercel.app/) или посмотрите демонстрацию (клик на картинку)&nbsp;&#128071;
 
-[![Превью](https://i.postimg.cc/kGghZc7n/preview.png)](https://youtu.be/6QE09oDJbeM)
+[![Превью](https://i.postimg.cc/hvn7PyXB/preview.png)](https://youtu.be/6QE09oDJbeM)
 
 ## Технологии и инструменты
 
