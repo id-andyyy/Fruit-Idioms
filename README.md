@@ -1,7 +1,7 @@
 ![Art](https://i.postimg.cc/hGHdNPgh/art.png)
 
-![GitHub Created At](https://img.shields.io/github/created-at/id-andyyy/Fruit-Idioms?style=flat&color=%23540554)
-![Lines Of Code](https://tokei.rs/b1/github/id-andyyy/Fruit-Idioms?style=flat&category=code&color=%23FF9100)
+![GitHub Created At](https://img.shields.io/github/created-at/id-andyyy/Fruit-Idioms?style=flat&color=%23E65F5A)
+![Lines Of Code](https://tokei.rs/b1/github/id-andyyy/Fruit-Idioms?style=flat&category=code&color=%23E68A41)
 ![Top Language](https://img.shields.io/github/languages/top/id-andyyy/Fruit-Idioms?style=flat)
 ![Website](https://img.shields.io/website?url=https%3A%2F%2Ffruit-idioms.vercel.app%2F)
 
